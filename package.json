@@ -1,0 +1,24 @@
+{
+  "name": "perfect-szn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV='production' postcss ./tailwind/tailwind.css -o ./public/main.css",
+    "dev": "postcss ./tailwind/tailwind.css -o ./public/main.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.1.0",
+    "cssnano": "^4.1.10",
+    "install": "^0.13.0",
+    "npm": "^6.14.9",
+    "postcss": "^8.2.0",
+    "postcss-cli": "^8.3.0",
+    "postcss-import": "^13.0.0",
+    "tailwindcss": "^2.0.1",
+    "tailwindcss-cli": "^0.1.2"
+  }
+}
