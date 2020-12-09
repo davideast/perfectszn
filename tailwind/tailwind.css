@@ -2,3 +2,41 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+.szn-header {
+  @apply flex gap-y-2 bg-black w-full h-64 flex-col justify-center mb-16 px-4 lg:px-16 xl:px-16;
+}
+
+.szn-header__title {
+  @apply text-5xl lg:text-6xl xl:text-6xl text-white font-display;
+}
+
+.szn_header__subtitle {
+  @apply text-2xl text-white font-body;
+}
+
+.szn-grid {
+  min-width: 1040px;
+  @apply grid grid-cols-5 px-4 lg:px-16 xl:px-16 gap-x-4;
+}
+
+.szn-heading {
+  @apply h-12 text-white font-display font-bold bg-black rounded-sm text-xl items-center justify-center flex mb-8;
+}
+
+.szn-topic-col {
+  @apply grid gap-y-4;
+}
+
+.szn-topic {
+  height: 100px;
+  min-width: 100%;
+  @apply flex items-center justify-center border-2 border-solid border-black text-lg rounded-sm p-2;
+}
+
+.szn-topic > span {
+  @apply text-center;
+}
+
+.szn-grid__col {
+  min-width: 170px;
+}
