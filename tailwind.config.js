@@ -13,6 +13,8 @@ module.exports = {
       white: "hsl(227 2% 94%)",
       black: "hsl(227 94% 4%)",
       green: "hsl(140 100% 20%)",
+      yellow: "hsl(46 99% 59%)",
+      "blue-800": "hsl(227 94% 12%)",
     },
     fontFamily: {
       body: ["'Karla'", "sans-serif"],
