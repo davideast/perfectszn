@@ -21,7 +21,6 @@ body {
   margin: 0 12rem !important;
 }
 
-
 .szn-scroll {
   @apply overflow-x-scroll overflow-y-hidden;
 }
@@ -92,8 +91,12 @@ body {
   @apply flex items-center justify-center p-4 text-lg font-bold text-black bg-white rounded-sm lg:text-xl xl:text-xl;
 }
 
-.szn-topic, .szn-instructions {
-  height: 100%;
+.szn-topic {
+  height: 100px;
+  @apply relative;
+}
+
+.szn-instructions {
   @apply relative;
 }
 

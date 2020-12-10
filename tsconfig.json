@@ -11,6 +11,6 @@
     "outDir": "build"
   },
   "files": [
-    "./src/App.tsx"
+    "src/index.tsx"
   ]
 }

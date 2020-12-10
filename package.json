@@ -3,15 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": true,
   "scripts": {
-    "build": "NODE_ENV='production' postcss ./tailwind/tailwind.css -o ./public/main.css",
-    "dev": "postcss ./tailwind/tailwind.css -o ./public/main.css --watch"
+    "build": "ts-node src/index.tsx"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.1.0",
+    "cpx": "^1.5.0",
     "cssnano": "^4.1.10",
     "install": "^0.13.0",
     "npm": "^6.14.9",
@@ -19,8 +20,15 @@
     "postcss-cli": "^8.3.0",
     "postcss-import": "^13.0.0",
     "preact": "^10.5.7",
+    "preact-render-to-string": "^5.1.12",
+    "shelljs": "^0.8.4",
     "tailwindcss": "^2.0.1",
     "tailwindcss-cli": "^0.1.2",
+    "ts-node": "^9.1.1",
     "typescript": "^4.1.2"
+  },
+  "dependencies": {
+    "@types/cpx": "^1.5.1",
+    "@types/shelljs": "^0.8.8"
   }
 }
