@@ -27,7 +27,7 @@ const SznTopicButtonList = (props: SznTopicButtonListProps) => {
   const { topics } = props;
   const buttonList = topics.map(topic => {
     return (
-      <TopicButton>
+      <TopicButton id={topic.id}>
         {topic.text}
       </TopicButton>
     );
@@ -61,7 +61,7 @@ const SznGridCol = (props: SznGridColProps) => {
 
 const SznGridColHeading: FunctionalComponent = ({ children }) => {
   return (
-    <div class="szn-heading">$5</div>
+    <div class="szn-heading">{children}</div>
   )
 };
 
