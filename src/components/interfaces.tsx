@@ -7,6 +7,7 @@ export type PreactProps = Readonly<preact.Attributes & {
 export interface SznTopic { text: string; id: string };
 
 export interface SznCategory {
+  id: string;
   title: string;
   topics: SznTopic[];
 }

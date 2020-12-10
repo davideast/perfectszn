@@ -1,4 +1,4 @@
-import { h, FunctionalComponent, Fragment } from 'preact';
+import { h, Fragment } from 'preact';
 import { TopicButton } from './TopicButton';
 import { PreactProps, SznCategory } from './interfaces';
 
@@ -9,7 +9,7 @@ interface SznGridProps extends PreactProps {
 export const SznGrid = ({ categories }: SznGridProps) => {
   const categoryColumns = categories.map(category => {
     return (
-      <SznGridCol heading={category.title} topics={category.topics} />
+      <SznGridCol category={category} />
     );
   });
   return (
@@ -20,14 +20,14 @@ export const SznGrid = ({ categories }: SznGridProps) => {
 };
 
 interface SznTopicButtonListProps extends PreactProps {
-  topics: any[];
+  category: SznCategory;
 }
 
 const SznTopicButtonList = (props: SznTopicButtonListProps) => {
-  const { topics } = props;
-  const buttonList = topics.map(topic => {
+  const { category } = props;
+  const buttonList = category.topics.map(topic => {
     return (
-      <TopicButton id={topic.id}>
+      <TopicButton id={topic.id} categoryId={category.id}>
         {topic.text}
       </TopicButton>
     );
@@ -40,29 +40,30 @@ const SznTopicButtonList = (props: SznTopicButtonListProps) => {
 }
 
 interface SznGridColProps extends PreactProps {
-  heading: string;
-  topics: any[];
+  category: SznCategory;
 }
 
 const SznGridCol = (props: SznGridColProps) => {
-  const { heading, topics } = props;
+  const { id, title } = props.category;
   return (
     <section class="szn-grid__col">
 
-      <SznGridColHeading>{heading}</SznGridColHeading>
+      <SznGridColHeading id={id}>{title}</SznGridColHeading>
 
       <div class="szn-topic-col">
-        <SznTopicButtonList topics={topics} />
+        <SznTopicButtonList category={props.category} />
       </div>
 
     </section>
   )
 };
 
-const SznGridColHeading: FunctionalComponent = ({ children }) => {
+interface SznGridColHeadingProps extends PreactProps {
+  id: string;
+}
+
+const SznGridColHeading = ({ children, id }: SznGridColHeadingProps) => {
   return (
-    <div class="szn-heading">{children}</div>
+    <div id={id} class="szn-heading">{children}</div>
   )
 };
-
-

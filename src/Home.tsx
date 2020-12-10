@@ -7,7 +7,13 @@ import {
   Scroller,
   SznGrid,
 } from "./components";
-import { categories } from './categories';
+import { categories } from "./categories";
+
+function createMarkup() {
+  return { 
+    __html: `window.__SZN_DATA__ = ${JSON.stringify(categories)};` 
+  };
+}
 
 export const Home: FunctionalComponent = () => {
   return (
@@ -18,10 +24,6 @@ export const Home: FunctionalComponent = () => {
 
         <script defer src="/__/firebase/8.1.2/firebase-app.js"></script>
         <script defer src="/__/firebase/8.1.2/firebase-analytics.js"></script>
-        <script
-          defer
-          src="/__/firebase/8.1.2/firebase-remote-config.js"
-        ></script>
         <script defer src="/__/firebase/8.1.2/firebase-performance.js"></script>
         <script defer src="/__/firebase/init.js"></script>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -30,6 +32,7 @@ export const Home: FunctionalComponent = () => {
           rel="stylesheet"
         />
         <link rel="stylesheet" href="/main.css" />
+        <script dangerouslySetInnerHTML={createMarkup()}></script>
       </head>
 
       <body class="font-body">

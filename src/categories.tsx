@@ -3,6 +3,7 @@ import { SznCategory } from './components';
 export const categories: SznCategory[] = [
   {
     title: "$5",
+    id: "category-5",
     topics: [
       { id: "jokic-mvp", text: "Jokic MVP" },
       { id: "murray-asg", text: "Murray makes ASG" },
@@ -13,6 +14,7 @@ export const categories: SznCategory[] = [
   },
   {
     title: "$4",
+    id: "category-4",
     topics: [
       { id: "jokic-40", text: "Jokic 40% from 3" },
       { id: "murray-40", text: "Murray 40% from 3" },
@@ -23,6 +25,7 @@ export const categories: SznCategory[] = [
   },
   {
     title: "$3",
+    id: "category-4",
     topics: [
       { id: "top3-offense", text: "Top 3 offense" },
       { id: "top5-defense", text: "Top 5 defense" },
@@ -33,6 +36,7 @@ export const categories: SznCategory[] = [
   },
   {
     title: "$2",
+    id: "category-3",
     topics: [
       { id: "mpj-65", text: "MPJ plays 65+ games" },
       { id: "harris-60", text: "Harris plays 60+ games" },
@@ -43,6 +47,7 @@ export const categories: SznCategory[] = [
   },
   {
     title: "$1",
+    id: "category-1",
     topics: [
       { id: "mpj-50", text: "MPJ 50 point game" },
       { id: "jokic-50", text: "Jokic 50 point game" },
