@@ -4,7 +4,7 @@ module.exports = {
   purge: {
     enabled: isProduction,
     content: [
-      "./public/**/*.html",
+      "./src/**/*.tsx",
     ],
   },
   darkMode: false, // or 'media' or 'class'

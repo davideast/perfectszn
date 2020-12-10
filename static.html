@@ -16,6 +16,7 @@
   </head>
   <body class="font-body">
 
+    <!-- <Header> -->
     <header class="szn-header">
 
       <h1 class="szn-header__title">
@@ -26,11 +27,24 @@
       </h2>
 
       <div class="szn-header__skyline">
-        <img src="/skyline.svg" alt="Denver Rainbow Skyline" />
+        <img src="/assets/skyline.svg" alt="Denver Rainbow Skyline" />
       </div>
 
     </header>
+    <!-- </Header> -->
 
+    <!-- <Instructions> -->
+    <section class="px-4 py-8 text-black bg-white rounded-sm szn-instructions">
+      <h3 class="mb-2 text-lg font-bold tracking-wider text-black uppercase font-display szn-instructions__heading">
+        How to play
+      </h3>
+      <p class="leading-loose szn-instructions__text">
+        What would make the perfect season for the Denver Nuggets? The easy answer is a championship, but in this game you have to pick the piece that would make that championship happen.
+      </p>
+    </section>
+    <!-- </Instructions> -->
+
+    <!-- <ValueBar> -->
     <section class="szn-value-bar">
       
       <section class="szn-value-bar__title">
@@ -41,10 +55,6 @@
           <span>5</span>
         </h3>
 
-        <div class="szn-value-bar__title__subtext">
-          <span class="px-4 uppercase tracking-wide">Swipe left</span>
-        </div>
-
       </section>
 
       <h3 class="szn-value-bar__cost">
@@ -52,24 +62,32 @@
         <span>left</span>
       </h3>
     </section>
+    <!-- </ValueBar> -->
     
+    <!-- <Scroller> -->
     <main class="szn-scroll">
+
+      <!-- <SznGrid> -->
       <article class="szn-grid">
   
+        <!-- <SznGridCol> -->
         <section class="szn-grid__col">
   
+          <!-- <SznHeading> -->
           <div class="szn-heading">
             $5
           </div>
   
           <div class="szn-topic-col">
   
+            <!-- <SznTopicButton> -->
             <button class="szn-topic szn-topic--active">
               <span>
                 Jokic MVP
               </span>
             </button>
-  
+            <!-- <SznTopicButton> -->
+
             <button class="szn-topic">
               <span>
                 Murray makes ASG
@@ -267,12 +285,15 @@
         </section>
   
       </article>
+
     </main>
+    <!-- </Scroller> -->
 
     <div class="my-32">
-      <img src="/skyline-wave.svg" alt="Skyline wave" />
+      <img src="/assets/skyline-wave.svg" alt="Skyline wave" />
     </div>
 
+    <!-- <SznFooter> -->
     <footer class="szn-footer">
       <h4 class="szn-footer__heading">
         Not official
@@ -282,11 +303,12 @@
         <a class="underline" href="https://twitter.com/_davideast" rel="noopener" target="blank">@_davideast</a>
       </h4>
     </footer>
+    <!-- </SznFooter> -->
 
-    <button class="szn-button">
+    <!-- <button class="szn-button">
       <span>$15</span> 
       <span>left</span>
-    </button>
+    </button> -->
 
   </body>
 </html>
