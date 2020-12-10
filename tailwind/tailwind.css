@@ -2,11 +2,33 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+:root {
+  --gradient-blue-purple: linear-gradient(132deg, #0034AC 0%, #67318E 100%);
+  --gradient-red-orange: linear-gradient(132deg, #E04733 0%, #FF6B1C 100%);
+  --gradient-dark: linear-gradient(180deg, #0C0C0C 0%, #292929 100%);
+}
+
+body {
+  background-image: var(--gradient-dark);
+  @apply text-white;
+}
+
+.szn-scroll, .szn-value-bar, .szn-header, .szn-footer {
+  @apply mx-auto pb-8;
+}
+
+.szn-value-bar, .szn-header, .szn-footer, .szn-grid  {
+  padding: 0 8rem !important;
+}
+
+.szn-scroll {
+  @apply overflow-x-scroll overflow-y-hidden;
+}
+
 .szn-header {
-  background-image: url(/basketball.svg);
-  background-position: top -28px right -20px;
-  background-repeat: no-repeat;
-  @apply flex gap-y-2 bg-black w-full h-64 flex-col justify-center mb-16 px-4 lg:px-16 xl:px-16;
+  padding-top: 12rem !important;
+  padding-bottom: 4rem !important;
+  @apply flex gap-y-2 w-full flex-col justify-center mb-16 py-24;
 }
 
 .szn-header__title {
@@ -17,8 +39,13 @@
   @apply text-2xl text-white font-body;
 }
 
+.szn-header__skyline {
+  top: 32px;
+  @apply absolute right-0;
+}
+
 .szn-value-bar {
-  @apply flex items-center justify-between rounded-sm py-4 mb-4 px-4 lg:mx-16 xl:mx-16;
+  @apply flex items-center justify-between rounded-sm py-4 mb-4;
 }
 
 .szn-value-bar__title {
@@ -38,11 +65,23 @@
 }
 
 .szn-grid {
-  @apply grid grid-cols-5 px-4 lg:px-16 xl:px-16 gap-x-4;
+  @apply grid grid-cols-5 py-4 gap-x-4;
 }
 
 .szn-heading {
-  @apply h-12 text-white font-display font-bold bg-black rounded-sm text-xl items-center justify-center flex mb-8;
+  @apply h-12 relative text-black font-display font-bold bg-white rounded-sm text-xl items-center justify-center flex mb-8;
+}
+
+.szn-heading::after {
+  content: "";
+  background-image: var(--gradient-blue-purple);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 5px;
+  left: 5px;
+  z-index: -1;
+  border-radius: 4px;
 }
 
 .szn-topic-col {
@@ -52,7 +91,19 @@
 .szn-topic {
   height: 100px;
   min-width: 100%;
-  @apply flex items-center justify-center border-2 border-solid border-black rounded-sm p-4 text-lg lg:text-xl xl:text-xl;
+  @apply flex relative bg-white text-black font-bold items-center justify-center rounded-sm p-4 text-lg lg:text-xl xl:text-xl;
+}
+
+.szn-topic::after {
+  content: "";
+  background-image: var(--gradient-red-orange);
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  top: 5px;
+  left: 5px;
+  z-index: -1;
+  border-radius: 4px;
 }
 
 .szn-topic > span {
@@ -60,11 +111,11 @@
 }
 
 .szn-topic--active {
-  @apply border-4 border-solid border-green shadow-xl;
+  @apply bg-black text-white border-2 border-solid border-white;
 }
 
 .szn-footer {
-  @apply h-24 mt-16 text-white bg-black flex items-center justify-between font-display px-4 lg:px-16 xl:px-16;
+  @apply h-24 mt-16 text-white flex items-center justify-between font-display;
 }
 
 .szn-footer__heading {
@@ -79,15 +130,15 @@
   right: 0;
   margin: 1rem;
   bottom: 0;
-  @apply bg-black h-24 w-24 font-display rounded-full fixed text-white shadow-xl border-4 border-white border-solid;
+  @apply bg-white h-24 w-24 font-display rounded-full fixed text-black shadow-xl border-4 border-black border-solid;
 }
 
 @media(max-width: 920px) {
   .szn-grid {
-    min-width: calc(240px * 5);
+    min-width: calc(260px * 5);
   }
-  .szn-value-bar__title__subtext {
-    display: block;
+  .szn-value-bar, .szn-header, .szn-footer, .szn-grid {
+    padding-left: 4rem !important;
+    padding-right: 4rem !important;
   }
 }
-

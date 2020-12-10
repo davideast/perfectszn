@@ -10,11 +10,14 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     colors: {
-      white: "hsl(227 2% 94%)",
-      black: "hsl(227 94% 4%)",
-      green: "hsl(140 100% 20%)",
-      yellow: "hsl(46 99% 59%)",
-      "blue-800": "hsl(227 94% 12%)",
+      white: "hsl(0 0% 100%)",
+      black: "hsl(0 0% 5%)",
+      green: "hsl(139 80% 38%)",
+      yellow: "hsl(54 100% 50%)",
+      red: "hsl(7 74% 54%)",
+      orange: "hsl(21 100% 55%)",
+      blue: "hsl(222 100% 34%)",
+      purple: "hsl(275 49% 37%)",
     },
     fontFamily: {
       body: ["'Karla'", "sans-serif"],
