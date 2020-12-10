@@ -32,6 +32,6 @@ componentToString(Home, 'index.html');
 function componentToString(Component: FunctionalComponent, outFile: string) {
   const componentString = render(<Component />);
   const destPath = publicPath(outFile);
-  writeFileSync(destPath, componentString);
+  writeFileSync(destPath, `<!DOCTYPE html>${componentString}`);
   console.log(`Wrote ${destPath}`);
 }
