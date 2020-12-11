@@ -16,6 +16,13 @@ import { copySync } from 'cpx';
 const PUBLIC_PATH = join(process.cwd(), `public`);
 const publicPath = (extra: string) => join(PUBLIC_PATH, extra);
 
+function componentToString(Component: FunctionalComponent, outFile: string) {
+  const componentString = render(<Component />);
+  const destPath = publicPath(outFile);
+  writeFileSync(destPath, `<!DOCTYPE html>${componentString}`);
+  console.log(`Wrote ${destPath}`);
+}
+
 // Delete public
 rm('-rf', PUBLIC_PATH)
 
@@ -30,10 +37,3 @@ copySync('src/assets/**/*.*', publicPath('assets'));
 
 // Write html documents
 componentToString(Home, 'index.html');
-
-function componentToString(Component: FunctionalComponent, outFile: string) {
-  const componentString = render(<Component />);
-  const destPath = publicPath(outFile);
-  writeFileSync(destPath, `<!DOCTYPE html>${componentString}`);
-  console.log(`Wrote ${destPath}`);
-}

@@ -33,6 +33,7 @@ export const Home: FunctionalComponent = () => {
         />
         <link rel="stylesheet" href="/main.css" />
         <script dangerouslySetInnerHTML={createMarkup()}></script>
+        <script defer src="/js/index.js"></script>
       </head>
 
       <body class="font-body">

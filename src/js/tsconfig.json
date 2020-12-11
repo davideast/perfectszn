@@ -1,17 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es2017",
-    "module": "commonjs",
+    "target": "es2015",
+    "module": "esnext",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react-jsx",
-    "jsxImportSource": "preact",
-    "outDir": "build",
+    "outDir": "../../public/js",
     "moduleResolution": "node"
   },
   "files": [
-    "src/index.tsx"
+    "./index.ts"
   ]
 }
