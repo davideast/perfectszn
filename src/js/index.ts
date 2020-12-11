@@ -100,6 +100,7 @@ function createPostCardSVG(state: any) {
 function createPostCardText(state: any) {
   const { selections } = state;
 
+  // Don't judge me for this... I don't know SVG
   const getRowOne = (text: string) => {
     const pieces = text.split(" ");
     let rowOne = "";
@@ -128,17 +129,19 @@ function createPostCardText(state: any) {
     return rowTwo;
   }
 
-  function getRows(selections: { text: string }[]) {
-    const DOUBLE_ROW = { x: 44, y: 76 };
-    const SINGLE_ROW = { x: 37, y: 58 };
+  function createRowText(text: string, y: number, x = 20) {
+    return `<text font-family="Karla-Regular_Bold, Karla" font-size="20" font-weight="bold" fill="#000516" x="${x}" y="${y}">${text}</text>`;
+  }
 
+  function getRows(selections: { text: string }[]) {
     return selections.map(selection => {
       const rowOne = getRowOne(selection.text);
       const rowTwo = getRowTwo(selection.text);
+      const rowOneText = createRowText(rowOne, 40);
       if(rowTwo.trim() === "") {
-        return `<tspan x="24" y="58">${rowOne}</tspan>`;
+        return rowOneText;
       } else {
-        return `<tspan x="24" y="40">${rowOne}</tspan><tspan x="24" y="72">${rowTwo}</tspan>`;
+        return `${rowOneText} ${createRowText(rowTwo, 72)}`;
       }
     });
   }
@@ -171,37 +174,27 @@ function createPostCardText(state: any) {
       <g id="TopicCard" transform="translate(88.000000, 238.000000)">
           <rect id="Rectangle-Copy-12" fill="url(#linearGradient-2)" x="7" y="0" width="167" height="103" rx="4"></rect>
           <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="170" height="100" rx="4"></rect>
-          <text font-family="Karla-Regular_Bold, Karla" font-size="20" font-weight="bold" line-spacing="32" fill="#000516">
-              ${rows[0]}
-          </text>
+          ${rows[0]}
       </g>
       <g id="TopicCard" transform="translate(278.000000, 238.000000)">
           <rect id="Rectangle-Copy-12" fill="url(#linearGradient-2)" x="7" y="0" width="167" height="103" rx="4"></rect>
           <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="170" height="100" rx="4"></rect>
-          <text font-family="Karla-Regular_Bold, Karla" font-size="20" font-weight="bold" line-spacing="32" fill="#000516">
-            ${rows[1]}
-          </text>
+          ${rows[1]}
       </g>
       <g id="TopicCard" transform="translate(468.000000, 238.000000)">
           <rect id="Rectangle-Copy-12" fill="url(#linearGradient-2)" x="7" y="0" width="167" height="103" rx="4"></rect>
           <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="170" height="100" rx="4"></rect>
-          <text font-family="Karla-Regular_Bold, Karla" font-size="20" font-weight="bold" line-spacing="32" fill="#000516">
-            ${rows[2]}
-          </text>
+          ${rows[2]}
       </g>
       <g id="TopicCard" transform="translate(658.000000, 238.000000)">
           <rect id="Rectangle-Copy-12" fill="url(#linearGradient-2)" x="7" y="0" width="167" height="103" rx="4"></rect>
           <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="170" height="100" rx="4"></rect>
-          <text font-family="Karla-Regular_Bold, Karla" font-size="20" font-weight="bold" line-spacing="32" fill="#000516">
-            ${rows[3]}
-          </text>
+          ${rows[3]}
       </g>
       <g id="TopicCard" transform="translate(88.000000, 357.000000)">
           <rect id="Rectangle-Copy-12" fill="url(#linearGradient-2)" x="7" y="0" width="167" height="103" rx="4"></rect>
           <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="170" height="100" rx="4"></rect>
-          <text font-family="Karla-Regular_Bold, Karla" font-size="20" font-weight="bold" line-spacing="32" fill="#000516">
-            ${rows[4]}
-          </text>
+          ${rows[4]}
       </g>
       <g id="Header" transform="translate(88.000000, 45.000000)">
           <g id="Skyline" transform="translate(524.000000, 0.000000)">
