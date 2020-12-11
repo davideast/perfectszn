@@ -6,6 +6,9 @@ module.exports = {
     content: [
       "./src/**/*.tsx",
     ],
+    options: {
+      safelist: ['szn-topic--shake'],
+    }
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
