@@ -19,5 +19,5 @@ export function ValueBar() {
         <span>left</span>
       </h3>
     </section>
-  )
+  );
 }

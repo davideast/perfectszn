@@ -15,11 +15,11 @@ body {
   @apply text-white;
 }
 
-.szn-scroll, .szn-value-bar, .szn-header, .szn-footer, .szn-instructions {
+.szn-scroll, .szn-sticky-bar, .szn-header, .szn-footer, .szn-instructions {
   @apply mx-auto mb-8;
 }
 
-.szn-value-bar, .szn-header, .szn-footer, .szn-grid, .szn-instructions  {
+.szn-sticky-bar, .szn-header, .szn-footer, .szn-grid, .szn-instructions  {
   margin: 0 12rem !important;
 }
 
@@ -68,6 +68,15 @@ body {
 
 .szn-value-bar__cost {
   @apply text-lg font-medium font-display text-green;
+}
+
+.szn-submit__button {
+  background-image: var(--gradient-red-orange);
+  padding: 1rem 4rem;
+  position: sticky;
+  top: 100px;
+  z-index: 100;
+  @apply rounded-sm;
 }
 
 .szn-grid {
@@ -147,7 +156,7 @@ body {
 }
 
 @media(max-width: 1080px) {
-  .szn-value-bar, .szn-header, .szn-footer, .szn-grid, .szn-instructions {
+  .szn-sticky-bar, .szn-header, .szn-footer, .szn-grid, .szn-instructions {
     margin-left: 8rem !important;
     margin-right: 8rem !important;
   }
@@ -163,7 +172,7 @@ body {
     grid-template-columns: 1fr;
     row-gap: 4rem;
   }
-  .szn-value-bar, .szn-header, .szn-footer, .szn-grid, .szn-instructions {
+  .szn-sticky-bar, .szn-header, .szn-footer, .szn-grid, .szn-instructions {
     margin-left: 2rem !important;
     margin-right: 2rem !important;
   }

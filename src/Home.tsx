@@ -40,8 +40,15 @@ export const Home: FunctionalComponent = () => {
 
         <InstructionsPanel />
 
-        <ValueBar />
+        <section class="szn-sticky-bar">
+          <ValueBar />
 
+          <button class="szn-submit__button uppercase font-display tracking-wider">
+            Submit
+          </button>
+
+        </section>
+        
         <SznGrid categories={categories} />
 
         <div class="my-32">
