@@ -1,68 +1,63 @@
-import { h, FunctionalComponent, Fragment } from 'preact';
-import { TopicButton } from './TopicButton';
-import { PreactProps, SznCategory } from './interfaces';
+import { h, Fragment } from "preact";
+import { TopicButton } from "./TopicButton";
+import { PreactProps, SznCategory } from "./interfaces";
 
 interface SznGridProps extends PreactProps {
   categories: SznCategory[];
 }
 
 export const SznGrid = ({ categories }: SznGridProps) => {
-  const categoryColumns = categories.map(category => {
-    return (
-      <SznGridCol heading={category.title} topics={category.topics} />
-    );
+  const categoryColumns = categories.map((category) => {
+    return <SznGridCol category={category} />;
   });
-  return (
-    <article class="szn-grid">
-      {categoryColumns}
-    </article>
-  );
+  return <article class="szn-grid">{categoryColumns}</article>;
 };
 
 interface SznTopicButtonListProps extends PreactProps {
-  topics: any[];
+  category: SznCategory;
 }
 
 const SznTopicButtonList = (props: SznTopicButtonListProps) => {
-  const { topics } = props;
-  const buttonList = topics.map(topic => {
+  const { category } = props;
+  const buttonList = category.topics.map((topic) => {
     return (
-      <TopicButton>
+      <TopicButton
+        id={topic.id}
+        categoryId={category.id}
+        categoryValue={category.value}
+      >
         {topic.text}
       </TopicButton>
     );
   });
-  return (
-    <Fragment>
-      {buttonList}
-    </Fragment>
-  );
-}
+  return <Fragment>{buttonList}</Fragment>;
+};
 
 interface SznGridColProps extends PreactProps {
-  heading: string;
-  topics: any[];
+  category: SznCategory;
 }
 
 const SznGridCol = (props: SznGridColProps) => {
-  const { heading, topics } = props;
+  const { id, title } = props.category;
   return (
     <section class="szn-grid__col">
-
-      <SznGridColHeading>{heading}</SznGridColHeading>
+      <SznGridColHeading id={id}>{title}</SznGridColHeading>
 
       <div class="szn-topic-col">
-        <SznTopicButtonList topics={topics} />
+        <SznTopicButtonList category={props.category} />
       </div>
-
     </section>
-  )
+  );
 };
 
-const SznGridColHeading: FunctionalComponent = ({ children }) => {
+interface SznGridColHeadingProps extends PreactProps {
+  id: string;
+}
+
+const SznGridColHeading = ({ children, id }: SznGridColHeadingProps) => {
   return (
-    <div class="szn-heading">$5</div>
-  )
+    <div id={id} class="szn-heading">
+      {children}
+    </div>
+  );
 };
-
-

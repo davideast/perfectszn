@@ -92,7 +92,7 @@ body {
 }
 
 .szn-topic {
-  height: 100px;
+  height: 120px;
   @apply relative;
 }
 

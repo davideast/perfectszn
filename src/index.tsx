@@ -13,25 +13,27 @@ import { copySync } from 'cpx';
  * 3. Copy static assets
  * 4. Write html documents
  */
-
 const PUBLIC_PATH = join(process.cwd(), `public`);
 const publicPath = (extra: string) => join(PUBLIC_PATH, extra);
+
+function componentToString(Component: FunctionalComponent, outFile: string) {
+  const componentString = render(<Component />);
+  const destPath = publicPath(outFile);
+  writeFileSync(destPath, `<!DOCTYPE html>${componentString}`);
+  console.log(`Wrote ${destPath}`);
+}
 
 // Delete public
 rm('-rf', PUBLIC_PATH)
 
 // Run Tailwind
-exec(`NODE_ENV='production' node_modules/.bin/postcss ./tailwind/tailwind.css -o ${publicPath('main.css')}`);
+exec(`NODE_ENV='${process.env.NODE_ENV}' node_modules/.bin/postcss ./tailwind/tailwind.css -o ${publicPath('main.css')}`);
+
+// Run Rollup
+exec(`NODE_ENV='${process.env.NODE_ENV}' node_modules/.bin/rollup -c rollup.config.js`);
 
 // Copy static assets
 copySync('src/assets/**/*.*', publicPath('assets'));
 
 // Write html documents
 componentToString(Home, 'index.html');
-
-function componentToString(Component: FunctionalComponent, outFile: string) {
-  const componentString = render(<Component />);
-  const destPath = publicPath(outFile);
-  writeFileSync(destPath, componentString);
-  console.log(`Wrote ${destPath}`);
-}
