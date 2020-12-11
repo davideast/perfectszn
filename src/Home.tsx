@@ -40,16 +40,24 @@ export const Home: FunctionalComponent = () => {
 
         <InstructionsPanel />
 
-        <ValueBar />
+        <section class="szn-sticky-bar">
+          <ValueBar />
 
+          <button id="szn-submit-button" class="szn-submit-button uppercase font-display tracking-wider hidden">
+            Submit
+          </button>
+
+        </section>
+        
         <SznGrid categories={categories} />
 
-        <div class="my-32">
-          <img src="/assets/skyline-wave.svg" alt="Skyline wave" />
+        <div id="szn-skyline" class="szn-skyline">
+          <img class="szn-skyline__wave" src="/assets/skyline-wave.svg" alt="Skyline wave" />
         </div>
 
         <Footer />
-        
+
+        <canvas class="hidden"></canvas>
       </body>
     </html>
   );
