@@ -1,6 +1,7 @@
 import { store } from './store';
 
 const sznTopics: NodeListOf<HTMLButtonElement> = document.querySelectorAll('.szn-topic');
+const valueBar = document.querySelector('.szn-value-bar');
 const valueBarCost: HTMLSpanElement | null = document.querySelector('#szn-value-bar__cost__value');
 const valueBarSelected: HTMLSpanElement | null = document.querySelector('#szn-value-bar__selected');
 
@@ -34,6 +35,14 @@ sznTopics.forEach(sznTopic => {
         value: { id, category, text, cost },
       });
     }
+
+    if(isOver && !isSelected) {
+      sznTopic.classList.toggle('shaker');
+      valueBar!.classList.toggle('shaker');
+      setTimeout(() => {
+        sznTopic.classList.toggle('shaker');
+        valueBar!.classList.toggle('shaker');
+      }, 820);
+    }
   });
 });
-

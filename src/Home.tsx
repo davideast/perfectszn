@@ -4,7 +4,6 @@ import {
   Footer,
   InstructionsPanel,
   ValueBar,
-  Scroller,
   SznGrid,
 } from "./components";
 import { categories } from "./categories";
@@ -43,15 +42,14 @@ export const Home: FunctionalComponent = () => {
 
         <ValueBar />
 
-        <Scroller>
-          <SznGrid categories={categories} />
-        </Scroller>
+        <SznGrid categories={categories} />
 
         <div class="my-32">
           <img src="/assets/skyline-wave.svg" alt="Skyline wave" />
         </div>
 
         <Footer />
+        
       </body>
     </html>
   );
