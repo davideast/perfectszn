@@ -5,6 +5,7 @@ import {
   InstructionsPanel,
   ValueBar,
   SznGrid,
+  TopicButton,
 } from "./components";
 import { categories } from "./categories";
 
