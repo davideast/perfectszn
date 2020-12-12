@@ -161,7 +161,7 @@ function createPostCardText(state: any) {
   <g id="perfectszn-postcard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
       <rect id="bg" fill="url(#linearGradient-1)" x="0" y="-6" width="1024" height="518"></rect>
       <g id="Callout" transform="translate(278.000000, 357.000000)">
-          <text id="Create-yours" font-family="Arvo-Bold, Arvo !important" font-size="20" font-weight="bold" fill="#FFFFFF">
+          <text id="Create-yours" font-family="Arvo-Bold, Arvo" font-size="20" font-weight="bold" fill="#FFFFFF">
               <tspan x="32" y="60">CREATE YOURS</tspan>
           </text>
           <rect id="Rectangle" stroke="#FFFFFF" stroke-width="3" x="1.5" y="1.5" width="547" height="100" rx="4"></rect>
