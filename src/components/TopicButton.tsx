@@ -2,10 +2,10 @@ import { h } from "preact";
 import { PreactProps } from "./interfaces";
 
 export interface TopicButtonProps extends PreactProps {
-  id: string;
+  id?: string;
   active?: boolean;
-  categoryId: string;
-  categoryValue: number;
+  categoryId?: string;
+  categoryValue?: number;
 }
 
 export const TopicButton = (props: TopicButtonProps) => {
