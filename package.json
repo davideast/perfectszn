@@ -5,7 +5,8 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "build": "ts-node src/index.tsx",
+    "build": "NODE_ENV='production' ts-node src/index.tsx",
+    "dev": "ts-node src/index.tsx",
     "rollup": "rollup -c rollup.config.js"
   },
   "keywords": [],
