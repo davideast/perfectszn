@@ -148,31 +148,34 @@ function createPostCardText(state: any) {
 
   return `
   <style>
-@font-face {
-  font-family: 'Arvo';
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/arvo/v14/tDbM2oWUg0MKoZw1-LPK89D4hAA.woff2) format('woff2');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-@font-face {
-  font-family: 'Karla';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/karla/v14/qkBIXvYC6trAT55ZBi1ueQVIjQTDypqaHUlMZbLXGhmRytc.woff) format('woff');
-  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
-}
-@font-face {
-  font-family: 'Karla';
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url(https://fonts.gstatic.com/s/karla/v14/qkBIXvYC6trAT55ZBi1ueQVIjQTDypqaE0lMZbLXGhmR.woff) format('woff');
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-</style>
+  /* latin */
+  @font-face {
+    font-family: 'Arvo';
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url(/fonts/Arvo.woff2) format('woff2');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* latin-ext */
+  @font-face {
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(/fonts/karla-latin-ext.woff) format('woff');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+    font-family: 'Karla';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url(/fonts/karla-latin.woff) format('woff');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  </style>
   <title>perfectszn-postcard</title>
   <defs>
       <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
@@ -187,11 +190,11 @@ function createPostCardText(state: any) {
   <g id="perfectszn-postcard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
       <rect id="bg" fill="url(#linearGradient-1)" x="0" y="-6" width="1024" height="518"></rect>
       <g id="Callout" transform="translate(278.000000, 357.000000)">
-          <text id="Create-yours" font-family="'Arvo', sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">
+          <text id="Create-yours" font-family="Arvo, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">
               <tspan x="32" y="60">CREATE YOURS</tspan>
           </text>
           <rect id="Rectangle" stroke="#FFFFFF" stroke-width="3" x="1.5" y="1.5" width="547" height="100" rx="4"></rect>
-          <text id="perfectszn.app" font-family="'Karla', sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF" text-decoration="underline">
+          <text id="perfectszn.app" font-family="Karla, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF" text-decoration="underline">
               <tspan x="377" y="60">perfectszn.app</tspan>
           </text>
       </g>
@@ -235,10 +238,10 @@ function createPostCardText(state: any) {
               <rect id="Rectangle-Copy-5" fill="#67318E" x="186" y="120" width="226" height="4" rx="2"></rect>
               <rect id="Rectangle-Copy-11" fill="#67318E" x="186" y="132" width="226" height="4" rx="2"></rect>
           </g>
-          <text id="Denver-Nuggets" font-family="Karla-Regular_Bold, Karla" font-size="24" font-weight="bold" fill="#FFFFFF">
+          <text id="Denver-Nuggets" font-family="Karla, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF">
               <tspan x="0" y="130">Denver Nuggets</tspan>
           </text>
-          <text id="Perfect-SZN" font-family="Arvo-Bold, Arvo" font-size="44" font-weight="bold" fill="#FFFFFF">
+          <text id="Perfect-SZN" font-family="'Arvo', sans-serif" font-size="44" font-weight="bold" fill="#FFFFFF">
               <tspan x="0" y="89">Perfect SZN</tspan>
           </text>
       </g>

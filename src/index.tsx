@@ -34,6 +34,7 @@ exec(`NODE_ENV='${process.env.NODE_ENV}' node_modules/.bin/rollup -c rollup.conf
 
 // Copy static assets
 copySync('src/assets/**/*.*', publicPath('assets'));
+copySync('src/fonts/**/*.*', publicPath('fonts'));
 
 // Write html documents
 componentToString(Home, 'index.html');
