@@ -104,7 +104,7 @@ function createPostCardText(state: any) {
     let rowOne = "";
     let chars = 0;
     pieces.forEach(piece => {
-      if(chars + piece.length <= 12) {
+      if(chars + piece.length <= 11) {
         rowOne = `${rowOne} ${piece}`;
       }
       chars = chars + piece.length;

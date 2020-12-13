@@ -17,8 +17,9 @@ function createMarkup() {
 
 export const Home: FunctionalComponent = () => {
   return (
-    <html>
+    <html lang="en">
       <head>
+        <meta name="description" content="Perfect SZN" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Perfect SZN</title>
         <link rel="stylesheet" href="/main.css" />
