@@ -57,7 +57,7 @@ submitButton!.addEventListener('click', () => {
   submitHiddenButton.click();
   setTimeout(() => {
     submitHiddenButton.click();
-  }, 2000);
+  }, 100);
 });
 
 sznTopics.forEach(sznTopic => {
