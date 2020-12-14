@@ -148,7 +148,7 @@ body {
 }
 
 .szn-skyline__title {
-  @apply font-display text-xl tracking-wider mb-4;
+  @apply font-display text-2xl tracking-wider mb-4;
 }
 
 .szn-skyline__wave {
