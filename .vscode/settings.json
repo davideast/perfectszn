@@ -1,4 +1,6 @@
 {
+  "css.validate": false, // Tailwind
   "editor.fontSize": 18,
-  "typescript.tsdk": "node_modules/typescript/lib"
+  "editor.minimap.enabled": false,
+  "typescript.tsdk": "node_modules/typescript/lib",
 }

@@ -6,8 +6,8 @@ const valueBarCost: HTMLSpanElement | null = document.querySelector('#szn-value-
 const valueBarSelected: HTMLSpanElement | null = document.querySelector('#szn-value-bar__selected');
 const submitButton: HTMLButtonElement | null = document.querySelector('#szn-submit-button');
 const submitHiddenButton = document.querySelector('#szn-submit-button--hidden')! as HTMLButtonElement;
+const downloadLink = document.querySelector('#szn-skyline__holder__button')! as HTMLAnchorElement;
 const canvas = document.querySelector('canvas')! as HTMLCanvasElement;
-const skyline = document.querySelector('#szn-skyline')! as HTMLDivElement;
 
 function renderState() {
   const state = store.getState();
@@ -42,10 +42,18 @@ submitHiddenButton.addEventListener('click', clickEvent => {
     const pngImage = new Image();
 
     pngImage.addEventListener('load', () => {
-      const existingImage = skyline.querySelector('.szn-skyline__post-card');
+      const existingImage = document.querySelector('.szn-skyline__post-card');
+      const possibleMask = document.querySelector('.szn-skyline__holder-mask');
+      const parentEl = existingImage?.parentElement;
       pngImage.classList.add('szn-skyline__post-card');
       existingImage?.remove();
-      skyline.appendChild(pngImage);
+      possibleMask?.remove();
+      // Remove instead of toggle because the user can
+      // generate an image to replace the previous one
+      downloadLink.classList.remove('hidden');
+      downloadLink.href= pngURL;
+      downloadLink.download = "perfectszn.jpg";
+      parentEl?.appendChild(pngImage);
       pngImage.scrollIntoView();
     });
 
