@@ -33,21 +33,29 @@ submitButton!.addEventListener('click', clickEvent => {
   const outerHTML = clone.outerHTML;
   let blobURL = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(outerHTML);
   const context = canvas!.getContext('2d');
-  const image = new Image();
-  const height = 512;
-  const width = 1024;
+  const svgImage = new Image();
+  const height = 512*2;
+  const width = 1024*2;
 
-  image.addEventListener('load', () => {
+  svgImage.addEventListener('load', () => {
     canvas.width = width;
     canvas.height = height;
-    context!.drawImage(image, 0, 0, width, height);
-    image.classList.add('szn-skyline__post-card');
-    const existingImage = skyline.querySelector('.szn-skyline__post-card');
-    existingImage?.remove();
-    skyline.appendChild(image);
-    image.scrollIntoView();
+    context!.drawImage(svgImage, 0, 0, width, height);
+    const pngURL = canvas.toDataURL('image/jpeg', 1.0);
+    const pngImage = new Image();
+
+    pngImage.addEventListener('load', () => {
+      const existingImage = skyline.querySelector('.szn-skyline__post-card');
+      pngImage.classList.add('szn-skyline__post-card');
+      existingImage?.remove();
+      skyline.appendChild(pngImage);
+      pngImage.scrollIntoView();
+    });
+
+    pngImage.src = pngURL;
   });
-  image.src = blobURL;
+
+  svgImage.src = blobURL;
 });
 
 sznTopics.forEach(sznTopic => {
@@ -96,6 +104,10 @@ function createPostCardSVG(state: any) {
 }
 
 function createPostCardText(state: any) {
+  // 10 is super important. After 10 for the first line it starts to
+  // overflow past the topic card.
+  const MAX_FIRST_LINE_LENGTH = 10;
+  const MAX_TOTAL_CHARS = 24;
   const { selections } = state;
 
   // Don't judge me for this... I don't know SVG
@@ -104,7 +116,8 @@ function createPostCardText(state: any) {
     let rowOne = "";
     let chars = 0;
     pieces.forEach(piece => {
-      if(chars + piece.length <= 11) {
+      
+      if(chars + piece.length <= MAX_FIRST_LINE_LENGTH) {
         rowOne = `${rowOne} ${piece}`;
       }
       chars = chars + piece.length;
@@ -119,7 +132,7 @@ function createPostCardText(state: any) {
     let rowTwo = "";
     let chars = 0;
     pieces.forEach(piece => {
-      if(chars + piece.length <= 24) {
+      if(chars + piece.length <= MAX_TOTAL_CHARS) {
         rowTwo = `${rowTwo} ${piece}`;
       }
       chars = chars + piece.length;
