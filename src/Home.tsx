@@ -38,6 +38,7 @@ export const Home: FunctionalComponent = () => {
           <button id="szn-submit-button" class="szn-submit-button uppercase font-display tracking-wider hidden">
             Submit
           </button>
+          <button id="szn-submit-button--hidden" class="hidden">You should not see this hack</button>
 
         </section>
         

@@ -5,6 +5,7 @@ const valueBar = document.querySelector('#szn-value-bar');
 const valueBarCost: HTMLSpanElement | null = document.querySelector('#szn-value-bar__cost__value');
 const valueBarSelected: HTMLSpanElement | null = document.querySelector('#szn-value-bar__selected');
 const submitButton: HTMLButtonElement | null = document.querySelector('#szn-submit-button');
+const submitHiddenButton = document.querySelector('#szn-submit-button--hidden')! as HTMLButtonElement;
 const canvas = document.querySelector('canvas')! as HTMLCanvasElement;
 const skyline = document.querySelector('#szn-skyline')! as HTMLDivElement;
 
@@ -27,7 +28,8 @@ renderState();
 
 store.subscribe(renderState);
 
-submitButton!.addEventListener('click', clickEvent => {
+
+submitHiddenButton.addEventListener('click', clickEvent => {
   const { svgImage, width, height, context, blobURL } = createSVG(canvas, store.getState());
 
   svgImage.addEventListener('load', () => {
@@ -38,19 +40,24 @@ submitButton!.addEventListener('click', clickEvent => {
     const pngImage = new Image();
 
     pngImage.addEventListener('load', () => {
-      setTimeout(() => {
-        const existingImage = skyline.querySelector('.szn-skyline__post-card');
-        pngImage.classList.add('szn-skyline__post-card');
-        existingImage?.remove();
-        skyline.appendChild(pngImage);
-        pngImage.scrollIntoView();
-      }, 1000);
+      const existingImage = skyline.querySelector('.szn-skyline__post-card');
+      pngImage.classList.add('szn-skyline__post-card');
+      existingImage?.remove();
+      skyline.appendChild(pngImage);
+      pngImage.scrollIntoView();
     });
 
     pngImage.src = pngURL;
   });
 
   svgImage.src = blobURL;
+});
+
+submitButton!.addEventListener('click', () => {
+  submitHiddenButton.click();
+  setTimeout(() => {
+    submitHiddenButton.click();
+  }, 2000);
 });
 
 sznTopics.forEach(sznTopic => {
