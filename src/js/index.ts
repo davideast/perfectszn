@@ -5,6 +5,7 @@ const valueBar = document.querySelector('#szn-value-bar');
 const valueBarCost: HTMLSpanElement | null = document.querySelector('#szn-value-bar__cost__value');
 const valueBarSelected: HTMLSpanElement | null = document.querySelector('#szn-value-bar__selected');
 const submitButton: HTMLButtonElement | null = document.querySelector('#szn-submit-button');
+const submitHiddenButton = document.querySelector('#szn-submit-button--hidden')! as HTMLButtonElement;
 const canvas = document.querySelector('canvas')! as HTMLCanvasElement;
 const skyline = document.querySelector('#szn-skyline')! as HTMLDivElement;
 
@@ -27,15 +28,11 @@ renderState();
 
 store.subscribe(renderState);
 
-submitButton!.addEventListener('click', clickEvent => {
-  const svgElement = createPostCardSVG(store.getState());
-  const clone = svgElement.cloneNode(true) as SVGSVGElement;
-  const outerHTML = clone.outerHTML;
-  let blobURL = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(outerHTML);
-  const context = canvas!.getContext('2d');
-  const svgImage = new Image();
-  const height = 512*2;
-  const width = 1024*2;
+
+// Because of the WebKit bug detailed below, we have a hidden button
+// that create two clicks for the actual submit button
+submitHiddenButton.addEventListener('click', clickEvent => {
+  const { svgImage, width, height, context, blobURL } = createSVG(canvas, store.getState());
 
   svgImage.addEventListener('load', () => {
     canvas.width = width;
@@ -56,6 +53,15 @@ submitButton!.addEventListener('click', clickEvent => {
   });
 
   svgImage.src = blobURL;
+});
+
+submitButton!.addEventListener('click', () => {
+  // Sadly, we have to initiate two seperate image creation
+  // operations in WebKit. The first won't wait for the requests to finish
+  // for the webfonts and the second click will cause it to work.
+  // More info in this great thread: https://github.com/exupero/saveSvgAsPng/issues/223
+  submitHiddenButton.click();
+  submitHiddenButton.click();
 });
 
 sznTopics.forEach(sznTopic => {
@@ -90,6 +96,18 @@ sznTopics.forEach(sznTopic => {
   });
 });
 
+function createSVG(canvas: HTMLCanvasElement, state: any) {
+  const svgElement = createPostCardSVG(state);
+  const clone = svgElement.cloneNode(true) as SVGSVGElement;
+  const outerHTML = clone.outerHTML;
+  let blobURL = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(outerHTML);
+  const context = canvas.getContext('2d');
+  const svgImage = new Image();
+  const height = 512 * 2;
+  const width = 1024 * 2;
+  return { svgImage, width, height, context, blobURL };
+}
+
 function createPostCardSVG(state: any) {
   const svgText = createPostCardText(state);
   const svgElement = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -111,6 +129,10 @@ function createPostCardText(state: any) {
   const { selections } = state;
 
   // Don't judge me for this... I don't know SVG
+  // These methods below make sure that no row
+  // goes beyond a certain amount of characters
+  // and overflow on the card. If I actually learn
+  // SVG I wouldn't have to do this.
   const getRowOne = (text: string) => {
     const pieces = text.split(" ");
     let rowOne = "";
