@@ -28,11 +28,29 @@ renderState();
 store.subscribe(renderState);
 
 submitButton!.addEventListener('click', clickEvent => {
-  // Sadly, we have to do this twice because of a bug in WebKit.
-  createPng();
-  setTimeout(() => {
-    createPng()
-  }, 400);
+  const { svgImage, width, height, context, blobURL } = createSVG(canvas, store.getState());
+
+  svgImage.addEventListener('load', () => {
+    canvas.width = width;
+    canvas.height = height;
+    context!.drawImage(svgImage, 0, 0, width, height);
+    const pngURL = canvas.toDataURL('image/jpeg', 1.0);
+    const pngImage = new Image();
+
+    pngImage.addEventListener('load', () => {
+      setTimeout(() => {
+        const existingImage = skyline.querySelector('.szn-skyline__post-card');
+        pngImage.classList.add('szn-skyline__post-card');
+        existingImage?.remove();
+        skyline.appendChild(pngImage);
+        pngImage.scrollIntoView();
+      }, 1000);
+    });
+
+    pngImage.src = pngURL;
+  });
+
+  svgImage.src = blobURL;
 });
 
 sznTopics.forEach(sznTopic => {
@@ -67,35 +85,16 @@ sznTopics.forEach(sznTopic => {
   });
 });
 
-function createPng() {
-  const svgElement = createPostCardSVG(store.getState());
+function createSVG(canvas: HTMLCanvasElement, state: any) {
+  const svgElement = createPostCardSVG(state);
   const clone = svgElement.cloneNode(true) as SVGSVGElement;
   const outerHTML = clone.outerHTML;
   let blobURL = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(outerHTML);
-  const context = canvas!.getContext('2d');
+  const context = canvas.getContext('2d');
   const svgImage = new Image();
   const height = 512 * 2;
   const width = 1024 * 2;
-
-  svgImage.addEventListener('load', () => {
-    canvas.width = width;
-    canvas.height = height;
-    context!.drawImage(svgImage, 0, 0, width, height);
-    const pngURL = canvas.toDataURL('image/jpeg', 1.0);
-    const pngImage = new Image();
-
-    pngImage.addEventListener('load', () => {
-      const existingImage = skyline.querySelector('.szn-skyline__post-card');
-      pngImage.classList.add('szn-skyline__post-card');
-      existingImage?.remove();
-      skyline.appendChild(pngImage);
-      pngImage.scrollIntoView();
-    });
-
-    pngImage.src = pngURL;
-  });
-
-  svgImage.src = blobURL;
+  return { svgImage, width, height, context, blobURL };
 }
 
 function createPostCardSVG(state: any) {
