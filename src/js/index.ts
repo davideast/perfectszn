@@ -29,6 +29,8 @@ renderState();
 store.subscribe(renderState);
 
 
+// Because of the WebKit bug detailed below, we have a hidden button
+// that create two clicks for the actual submit button
 submitHiddenButton.addEventListener('click', clickEvent => {
   const { svgImage, width, height, context, blobURL } = createSVG(canvas, store.getState());
 
@@ -54,10 +56,12 @@ submitHiddenButton.addEventListener('click', clickEvent => {
 });
 
 submitButton!.addEventListener('click', () => {
+  // Sadly, we have to initiate two seperate image creation
+  // operations in WebKit. The first won't wait for the requests to finish
+  // for the webfonts and the second click will cause it to work.
+  // More info in this great thread: https://github.com/exupero/saveSvgAsPng/issues/223
   submitHiddenButton.click();
-  setTimeout(() => {
-    submitHiddenButton.click();
-  }, 100);
+  submitHiddenButton.click();
 });
 
 sznTopics.forEach(sznTopic => {
