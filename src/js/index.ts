@@ -28,34 +28,11 @@ renderState();
 store.subscribe(renderState);
 
 submitButton!.addEventListener('click', clickEvent => {
-  const svgElement = createPostCardSVG(store.getState());
-  const clone = svgElement.cloneNode(true) as SVGSVGElement;
-  const outerHTML = clone.outerHTML;
-  let blobURL = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(outerHTML);
-  const context = canvas!.getContext('2d');
-  const svgImage = new Image();
-  const height = 512*2;
-  const width = 1024*2;
-
-  svgImage.addEventListener('load', () => {
-    canvas.width = width;
-    canvas.height = height;
-    context!.drawImage(svgImage, 0, 0, width, height);
-    const pngURL = canvas.toDataURL('image/jpeg', 1.0);
-    const pngImage = new Image();
-
-    pngImage.addEventListener('load', () => {
-      const existingImage = skyline.querySelector('.szn-skyline__post-card');
-      pngImage.classList.add('szn-skyline__post-card');
-      existingImage?.remove();
-      skyline.appendChild(pngImage);
-      pngImage.scrollIntoView();
-    });
-
-    pngImage.src = pngURL;
-  });
-
-  svgImage.src = blobURL;
+  // Sadly, we have to do this twice because of a bug in WebKit.
+  createPng();
+  setTimeout(() => {
+    createPng()
+  }, 400);
 });
 
 sznTopics.forEach(sznTopic => {
@@ -90,6 +67,37 @@ sznTopics.forEach(sznTopic => {
   });
 });
 
+function createPng() {
+  const svgElement = createPostCardSVG(store.getState());
+  const clone = svgElement.cloneNode(true) as SVGSVGElement;
+  const outerHTML = clone.outerHTML;
+  let blobURL = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(outerHTML);
+  const context = canvas!.getContext('2d');
+  const svgImage = new Image();
+  const height = 512 * 2;
+  const width = 1024 * 2;
+
+  svgImage.addEventListener('load', () => {
+    canvas.width = width;
+    canvas.height = height;
+    context!.drawImage(svgImage, 0, 0, width, height);
+    const pngURL = canvas.toDataURL('image/jpeg', 1.0);
+    const pngImage = new Image();
+
+    pngImage.addEventListener('load', () => {
+      const existingImage = skyline.querySelector('.szn-skyline__post-card');
+      pngImage.classList.add('szn-skyline__post-card');
+      existingImage?.remove();
+      skyline.appendChild(pngImage);
+      pngImage.scrollIntoView();
+    });
+
+    pngImage.src = pngURL;
+  });
+
+  svgImage.src = blobURL;
+}
+
 function createPostCardSVG(state: any) {
   const svgText = createPostCardText(state);
   const svgElement = document.createElementNS("http://www.w3.org/2000/svg", "svg");
@@ -111,6 +119,10 @@ function createPostCardText(state: any) {
   const { selections } = state;
 
   // Don't judge me for this... I don't know SVG
+  // These methods below make sure that no row
+  // goes beyond a certain amount of characters
+  // and overflow on the card. If I actually learn
+  // SVG I wouldn't have to do this.
   const getRowOne = (text: string) => {
     const pieces = text.split(" ");
     let rowOne = "";
