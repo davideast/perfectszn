@@ -61,7 +61,9 @@ submitButton!.addEventListener('click', () => {
   // for the webfonts and the second click will cause it to work.
   // More info in this great thread: https://github.com/exupero/saveSvgAsPng/issues/223
   submitHiddenButton.click();
-  submitHiddenButton.click();
+  setTimeout(() => {
+    submitHiddenButton.click();
+  }, 250);
 });
 
 sznTopics.forEach(sznTopic => {
