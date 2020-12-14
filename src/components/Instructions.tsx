@@ -7,7 +7,7 @@ export function InstructionsPanel() {
         How to play
       </h3>
       <p class="leading-loose szn-instructions__text">
-        <strong>Pick 5</strong> but stay within $15. What would make the perfect season for the Denver Nuggets? The easy answer is a championship, but in this game you have to pick the piece that would make that championship happen.
+        <strong>Pick 5</strong> but stay within $15. Once you submit your picks we'll turn them into an image for you to post.
       </p>
     </section>
   );

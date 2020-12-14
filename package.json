@@ -5,7 +5,8 @@
   "main": "index.js",
   "private": true,
   "scripts": {
-    "build": "ts-node src/index.tsx",
+    "build": "NODE_ENV='production' ts-node src/index.tsx",
+    "dev": "ts-node src/index.tsx",
     "rollup": "rollup -c rollup.config.js"
   },
   "keywords": [],
@@ -18,6 +19,7 @@
     "autoprefixer": "^10.1.0",
     "cpx": "^1.5.0",
     "cssnano": "^4.1.10",
+    "firebase-tools": "^8.19.0",
     "install": "^0.13.0",
     "npm": "^6.14.9",
     "postcss": "^8.2.0",
