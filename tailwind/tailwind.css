@@ -82,7 +82,7 @@ body {
 .szn-submit-button {
   background-image: var(--gradient-red-orange);
   padding: 1rem 4rem;
-  @apply w-full rounded-sm;
+  @apply w-full rounded-sm uppercase font-display tracking-wider;
 }
 
 .szn-grid {
@@ -143,19 +143,44 @@ body {
 }
 
 .szn-skyline {
-  @apply relative flex flex-col items-center justify-center py-8;
+  margin-bottom: 6rem !important;
+  @apply relative py-8;
+}
+
+.szn-skyline__title {
+  @apply font-display text-xl tracking-wider mb-4;
 }
 
 .szn-skyline__wave {
   z-index: -1;
-  @apply absolute;
 }
 
 .szn-skyline__post-card {
   max-width: 100%;
-  width: 80%;
   border: 3px solid white;
   border-radius: 2px;
+}
+
+.szn-skyline__holder {
+  @apply relative;
+}
+
+.szn-skyline__holder__button {
+  margin: 1.25rem;
+  background: hsla(0 0% 0% / .4);
+  border-radius: 2px;
+  padding: .5rem;
+  @apply h-12 w-12 absolute bottom-0 right-0;
+}
+
+.szn-skyline__holder-mask {
+  background-color: hsl(0 0% 0% / 0.80);
+  @apply absolute flex items-center justify-center left-0 top-0 h-full w-full;
+}
+
+.szn-skyline__holder-mask__heading {
+  width: 22ch;
+  @apply font-display text-xl text-center;
 }
 
 .szn-footer {
@@ -170,17 +195,18 @@ body {
   @apply text-right;
 }
 
-.szn-button {
-  right: 0;
-  margin: 1rem;
-  bottom: 0;
-  @apply fixed w-24 h-24 text-black bg-white border-4 border-black border-solid rounded-full shadow-xl font-display;
-}
 
 @media(max-width: 1080px) {
   .szn-sticky-bar, .szn-header, .szn-footer, .szn-grid, .szn-instructions, .szn-skyline {
     margin-left: 8rem !important;
     margin-right: 8rem !important;
+  }
+}
+
+@media(max-width: 880px) {
+  .szn-sticky-bar, .szn-header, .szn-footer, .szn-grid, .szn-instructions, .szn-skyline {
+    margin-left: 4rem !important;
+    margin-right: 4rem !important;
   }
 }
 

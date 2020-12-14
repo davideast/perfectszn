@@ -9,12 +9,6 @@ import {
 } from "./components";
 import { categories } from "./categories";
 
-function createMarkup() {
-  return { 
-    __html: `window.__SZN_DATA__ = ${JSON.stringify(categories)};` 
-  };
-}
-
 export const Home: FunctionalComponent = () => {
   return (
     <html lang="en">
@@ -23,7 +17,6 @@ export const Home: FunctionalComponent = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Perfect SZN</title>
         <link rel="stylesheet" href="/main.css" />
-        <script dangerouslySetInnerHTML={createMarkup()}></script>
         <script defer src="/js/index.js"></script>
       </head>
 
@@ -41,11 +34,26 @@ export const Home: FunctionalComponent = () => {
           <button id="szn-submit-button--hidden" class="hidden">You should not see this hack</button>
 
         </section>
-        
+
         <SznGrid categories={categories} />
 
-        <div id="szn-skyline" class="szn-skyline">
+        <div class="szn-fullbleed py-32">
           <img class="szn-skyline__wave" src="/assets/skyline-wave.svg" alt="Skyline wave" />
+        </div>
+
+        <div id="szn-skyline" class="szn-skyline">
+          <h4 class="szn-skyline__title">Your SZN</h4>
+          <div class="szn-skyline__holder">
+            <img class="szn-skyline__post-card" src="/assets/blank-post-card.jpg" alt="Blank Selection Card" />
+            <a href="#" id="szn-skyline__holder__button" class="szn-skyline__holder__button hidden">
+              <img src="/assets/download.svg" alt="Download icon" />
+            </a>
+            <div class="szn-skyline__holder-mask">
+              <span class="szn-skyline__holder-mask__heading">
+                Make your picks to generate your season
+              </span>
+            </div>
+          </div>
         </div>
 
         <Footer />
