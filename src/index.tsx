@@ -1,7 +1,7 @@
 import { FunctionalComponent, h, JSX } from 'preact';
 import render from 'preact-render-to-string';
 import { Home } from './Home';
-import { writeFileSync } from 'fs';
+import { writeFileSync, readFileSync } from 'fs';
 import { join } from 'path';
 import { rm, exec } from 'shelljs';
 import { copySync } from 'cpx';
@@ -13,7 +13,9 @@ import { KARLA_BASE64 } from './fonts/Karla';
  * 1. Run tailwind
  * 2. Make public
  * 3. Copy static assets
- * 4. Write html documents
+ * 4. Create font string files for SVG generation
+ * 5. Read main.css and embed in html
+ * 6. Write html documents
  */
 const PUBLIC_PATH = join(process.cwd(), `public`);
 const publicPath = (extra: string) => join(PUBLIC_PATH, extra);
@@ -40,5 +42,7 @@ copySync('src/assets/**/*.*', publicPath('assets'));
 writeFileSync(publicPath('assets/Arvo.txt'), ARVO_BASE64);
 writeFileSync(publicPath('assets/Karla.txt'), KARLA_BASE64);
 
+const styles = readFileSync(publicPath('main.css'), 'utf-8');
+
 // Write html documents
-componentToString(Home, 'index.html');
+componentToString(() => <Home styles={styles} />, 'index.html');

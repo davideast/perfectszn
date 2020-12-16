@@ -8,7 +8,6 @@ const submitButton: HTMLButtonElement | null = document.querySelector('#szn-subm
 const submitHiddenButton = document.querySelector('#szn-submit-button--hidden')! as HTMLButtonElement;
 const downloadLink = document.querySelector('#szn-skyline__holder__button')! as HTMLAnchorElement;
 const canvas = document.querySelector('canvas')! as HTMLCanvasElement;
-const body = document.body;
 
 function renderState() {
   const state = store.getState();

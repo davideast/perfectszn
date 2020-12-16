@@ -6,4 +6,4 @@ export * from './Scroller';
 export * from './TopicButton';
 export * from './ValueBar';
 export * from './interfaces';
-export * from './EmbeddedFonts';
+export * from './EmbeddedStyles';

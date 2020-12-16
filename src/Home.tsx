@@ -1,23 +1,22 @@
-import { FunctionalComponent, h } from "preact";
+import { h } from "preact";
 import {
   Header,
   Footer,
   InstructionsPanel,
   ValueBar,
   SznGrid,
-  EmbeddedFonts,
+  EmbeddedStyles,
 } from "./components";
 import { categories } from "./categories";
 
-export const Home: FunctionalComponent = () => {
+export const Home = ({ styles }: { styles: string }) => {
   return (
     <html lang="en">
       <head>
         <meta name="description" content="Perfect SZN" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Perfect SZN</title>
-        <link rel="stylesheet" href="/main.css" />
-        <EmbeddedFonts />
+        <EmbeddedStyles styles={styles} />
         <script defer src="/js/index.js"></script>
       </head>
 
