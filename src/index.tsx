@@ -5,6 +5,8 @@ import { writeFileSync } from 'fs';
 import { join } from 'path';
 import { rm, exec } from 'shelljs';
 import { copySync } from 'cpx';
+import { ARVO_BASE64 } from './fonts/Arvo';
+import { KARLA_BASE64 } from './fonts/Karla';
 
 /**
  * 0. Delete public
@@ -34,7 +36,9 @@ exec(`NODE_ENV='${process.env.NODE_ENV}' node_modules/.bin/rollup -c rollup.conf
 
 // Copy static assets
 copySync('src/assets/**/*.*', publicPath('assets'));
-copySync('src/fonts/**/*.*', publicPath('fonts'));
+// Copy font values thare are embedded when SVGs are generated
+writeFileSync(publicPath('assets/Arvo.txt'), ARVO_BASE64);
+writeFileSync(publicPath('assets/Karla.txt'), KARLA_BASE64);
 
 // Write html documents
 componentToString(Home, 'index.html');

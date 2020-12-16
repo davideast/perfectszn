@@ -5,7 +5,7 @@ import {
   InstructionsPanel,
   ValueBar,
   SznGrid,
-  TopicButton,
+  EmbeddedFonts,
 } from "./components";
 import { categories } from "./categories";
 
@@ -17,6 +17,7 @@ export const Home: FunctionalComponent = () => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Perfect SZN</title>
         <link rel="stylesheet" href="/main.css" />
+        <EmbeddedFonts />
         <script defer src="/js/index.js"></script>
       </head>
 
