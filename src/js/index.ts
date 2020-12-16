@@ -229,61 +229,61 @@ function createPostCardText(state: any, fonts: string[]) {
           <stop stop-color="#FF6B1C" offset="100%"></stop>
       </linearGradient>
   </defs>
-  <g id="perfectszn-postcard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-      <rect id="bg" fill="url(#linearGradient-1)" x="0" y="-6" width="1024" height="518"></rect>
-      <g id="Callout" transform="translate(278.000000, 357.000000)">
+  <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+      <rect fill="url(#linearGradient-1)" x="0" y="-6" width="1024" height="518"></rect>
+      <g transform="translate(278.000000, 357.000000)">
           <text id="Create-yours" font-family="Arvo, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">
               <tspan x="32" y="60">CREATE YOURS</tspan>
           </text>
-          <rect id="Rectangle" stroke="#FFFFFF" stroke-width="3" x="1.5" y="1.5" width="547" height="100" rx="4"></rect>
-          <text id="perfectszn.app" font-family="Karla, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF" text-decoration="underline">
+          <rect stroke="#FFFFFF" stroke-width="3" x="1.5" y="1.5" width="547" height="100" rx="4"></rect>
+          <text font-family="Karla, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF" text-decoration="underline">
               <tspan x="377" y="60">perfectszn.app</tspan>
           </text>
       </g>
-      <g id="TopicCard" transform="translate(88.000000, 238.000000)">
+      <g transform="translate(88.000000, 238.000000)">
           <rect id="Rectangle-Copy-12" fill="url(#linearGradient-2)" x="7" y="0" width="167" height="103" rx="4"></rect>
           <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="170" height="100" rx="4"></rect>
           ${rows[0]}
       </g>
-      <g id="TopicCard" transform="translate(278.000000, 238.000000)">
+      <g transform="translate(278.000000, 238.000000)">
           <rect id="Rectangle-Copy-12" fill="url(#linearGradient-2)" x="7" y="0" width="167" height="103" rx="4"></rect>
           <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="170" height="100" rx="4"></rect>
           ${rows[1]}
       </g>
-      <g id="TopicCard" transform="translate(468.000000, 238.000000)">
+      <g transform="translate(468.000000, 238.000000)">
           <rect id="Rectangle-Copy-12" fill="url(#linearGradient-2)" x="7" y="0" width="167" height="103" rx="4"></rect>
           <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="170" height="100" rx="4"></rect>
           ${rows[2]}
       </g>
-      <g id="TopicCard" transform="translate(658.000000, 238.000000)">
-          <rect id="Rectangle-Copy-12" fill="url(#linearGradient-2)" x="7" y="0" width="167" height="103" rx="4"></rect>
-          <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="170" height="100" rx="4"></rect>
+      <g transform="translate(658.000000, 238.000000)">
+          <rect fill="url(#linearGradient-2)" x="7" y="0" width="167" height="103" rx="4"></rect>
+          <rect fill="#FFFFFF" x="0" y="0" width="170" height="100" rx="4"></rect>
           ${rows[3]}
       </g>
-      <g id="TopicCard" transform="translate(88.000000, 357.000000)">
-          <rect id="Rectangle-Copy-12" fill="url(#linearGradient-2)" x="7" y="0" width="167" height="103" rx="4"></rect>
-          <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="170" height="100" rx="4"></rect>
+      <g transform="translate(88.000000, 357.000000)">
+          <rect fill="url(#linearGradient-2)" x="7" y="0" width="167" height="103" rx="4"></rect>
+          <rect fill="#FFFFFF" x="0" y="0" width="170" height="100" rx="4"></rect>
           ${rows[4]}
       </g>
-      <g id="Header" transform="translate(88.000000, 45.000000)">
-          <g id="Skyline" transform="translate(524.000000, 0.000000)">
-              <rect id="Rectangle" fill="#E04733" x="0" y="0" width="412" height="4" rx="2"></rect>
-              <rect id="Rectangle-Copy-6" fill="#E04733" x="0" y="12" width="412" height="4" rx="2"></rect>
-              <rect id="Rectangle-Copy" fill="#FF6B1C" x="100" y="36" width="312" height="4" rx="2"></rect>
-              <rect id="Rectangle-Copy-7" fill="#FF6B1C" x="100" y="24" width="312" height="4" rx="2"></rect>
-              <rect id="Rectangle-Copy-2" fill="#FFE600" x="40" y="60" width="372" height="4" rx="2"></rect>
-              <rect id="Rectangle-Copy-8" fill="#FFE600" x="40" y="48" width="372" height="4" rx="2"></rect>
-              <rect id="Rectangle-Copy-3" fill="#14B045" x="56" y="84" width="356" height="4" rx="2"></rect>
-              <rect id="Rectangle-Copy-9" fill="#14B045" x="56" y="72" width="356" height="4" rx="2"></rect>
-              <rect id="Rectangle-Copy-4" fill="#0034AC" x="113" y="108" width="299" height="4" rx="2"></rect>
-              <rect id="Rectangle-Copy-10" fill="#0034AC" x="113" y="96" width="299" height="4" rx="2"></rect>
-              <rect id="Rectangle-Copy-5" fill="#67318E" x="186" y="120" width="226" height="4" rx="2"></rect>
-              <rect id="Rectangle-Copy-11" fill="#67318E" x="186" y="132" width="226" height="4" rx="2"></rect>
+      <g transform="translate(88.000000, 45.000000)">
+          <g transform="translate(524.000000, 0.000000)">
+              <rect fill="#E04733" x="0" y="0" width="412" height="4" rx="2"></rect>
+              <rect fill="#E04733" x="0" y="12" width="412" height="4" rx="2"></rect>
+              <rect fill="#FF6B1C" x="100" y="36" width="312" height="4" rx="2"></rect>
+              <rect fill="#FF6B1C" x="100" y="24" width="312" height="4" rx="2"></rect>
+              <rect fill="#FFE600" x="40" y="60" width="372" height="4" rx="2"></rect>
+              <rect fill="#FFE600" x="40" y="48" width="372" height="4" rx="2"></rect>
+              <rect fill="#14B045" x="56" y="84" width="356" height="4" rx="2"></rect>
+              <rect fill="#14B045" x="56" y="72" width="356" height="4" rx="2"></rect>
+              <rect fill="#0034AC" x="113" y="108" width="299" height="4" rx="2"></rect>
+              <rect fill="#0034AC" x="113" y="96" width="299" height="4" rx="2"></rect>
+              <rect fill="#67318E" x="186" y="120" width="226" height="4" rx="2"></rect>
+              <rect fill="#67318E" x="186" y="132" width="226" height="4" rx="2"></rect>
           </g>
-          <text id="Denver-Nuggets" font-family="Karla, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF">
+          <text font-family="Karla, sans-serif" font-size="24" font-weight="bold" fill="#FFFFFF">
               <tspan x="0" y="130">Denver Nuggets</tspan>
           </text>
-          <text id="Perfect-SZN" font-family="Arvo, sans-serif" font-size="44" font-weight="bold" fill="#FFFFFF">
+          <text font-family="Arvo, sans-serif" font-size="44" font-weight="bold" fill="#FFFFFF">
               <tspan x="0" y="89">Perfect SZN</tspan>
           </text>
       </g>
