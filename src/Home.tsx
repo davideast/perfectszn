@@ -6,10 +6,11 @@ import {
   ValueBar,
   SznGrid,
   EmbeddedStyles,
+  EmbeddedScript
 } from "./components";
 import { categories } from "./categories";
 
-export const Home = ({ styles }: { styles: string }) => {
+export const Home = ({ styles, script }: { styles: string, script: string }) => {
   return (
     <html lang="en">
       <head>
@@ -17,7 +18,6 @@ export const Home = ({ styles }: { styles: string }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Perfect SZN</title>
         <EmbeddedStyles styles={styles} />
-        <script defer src="/js/index.js"></script>
       </head>
 
       <body class="font-body">
@@ -59,6 +59,7 @@ export const Home = ({ styles }: { styles: string }) => {
         <Footer />
 
         <canvas class="hidden"></canvas>
+        <EmbeddedScript script={script} />
       </body>
     </html>
   );

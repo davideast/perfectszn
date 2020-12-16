@@ -43,6 +43,7 @@ writeFileSync(publicPath('assets/Arvo.txt'), ARVO_BASE64);
 writeFileSync(publicPath('assets/Karla.txt'), KARLA_BASE64);
 
 const styles = readFileSync(publicPath('main.css'), 'utf-8');
+const script = readFileSync(publicPath('js/index.js'), 'utf-8');
 
 // Write html documents
-componentToString(() => <Home styles={styles} />, 'index.html');
+componentToString(() => <Home styles={styles} script={script} />, 'index.html');
