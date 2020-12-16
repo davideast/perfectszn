@@ -46,7 +46,7 @@ export const Home = ({ styles, script }: { styles: string, script: string }) => 
           <div class="szn-skyline__holder">
             <img class="szn-skyline__post-card" loading="lazy" src="/assets/blank-post-card.jpg" alt="Blank Selection Card" />
             <a href="#" id="szn-skyline__holder__button" class="szn-skyline__holder__button hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" height="100" width="100" fill="#FFF"><path d="M22.3 43.5c-.6 1.5-.3 3.2.9 4.4l24 24c.8.8 1.8 1.2 2.8 1.2s2.1-.4 2.8-1.2l24-24c1.1-1.1 1.5-2.9.9-4.4-.6-1.5-2-2.5-3.7-2.5H54V14c0-2.2-1.8-4-4-4s-4 1.8-4 4v27H26c-1.7 0-3.1 1-3.7 2.5zM64.4 49L50 63.4 35.6 49h28.8zM18 88h64c2.2 0 4-1.8 4-4s-1.8-4-4-4H18c-2.2 0-4 1.8-4 4s1.8 4 4 4z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="#FFF"><path d="M22.3 43.5c-.6 1.5-.3 3.2.9 4.4l24 24c.8.8 1.8 1.2 2.8 1.2s2.1-.4 2.8-1.2l24-24c1.1-1.1 1.5-2.9.9-4.4-.6-1.5-2-2.5-3.7-2.5H54V14c0-2.2-1.8-4-4-4s-4 1.8-4 4v27H26c-1.7 0-3.1 1-3.7 2.5zM64.4 49L50 63.4 35.6 49h28.8zM18 88h64c2.2 0 4-1.8 4-4s-1.8-4-4-4H18c-2.2 0-4 1.8-4 4s1.8 4 4 4z"/></svg>
             </a>
             <div class="szn-skyline__holder-mask">
               <span class="szn-skyline__holder-mask__heading">
