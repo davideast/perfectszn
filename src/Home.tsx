@@ -17,6 +17,8 @@ export const Home = ({ styles, script }: { styles: string, script: string }) => 
         <meta name="description" content="Perfect SZN" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Perfect SZN</title>
+        <link rel="preload" href="/assets/Arvo.txt" as="fetch" />
+        <link rel="preload" href="/assets/Karla.txt" as="fetch" />
         <EmbeddedStyles styles={styles} />
       </head>
 
