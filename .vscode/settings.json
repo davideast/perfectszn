@@ -2,5 +2,6 @@
   "css.validate": false, // Tailwind
   "editor.fontSize": 18,
   "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
   "typescript.tsdk": "node_modules/typescript/lib",
 }
