@@ -38,7 +38,7 @@ export const Home = ({ styles, script }: { styles: string, script: string }) => 
         <SznGrid categories={categories} />
 
         <div class="szn-fullbleed py-32">
-          <svg width="1438" height="173" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="11.808%" y1="49.497%" x2="93.884%" y2="50.535%" id="a"><stop stop-color="#E04733" offset="0%"/><stop stop-color="#FF6B1C" offset="20.711%"/><stop stop-color="#FFE600" offset="39.441%"/><stop stop-color="#14B045" offset="63.808%"/><stop stop-color="#0034AC" offset="82.839%"/><stop stop-color="#67318E" offset="100%"/></linearGradient></defs><path d="M0 34.641C90.25 3.065 169.917-6.925 239 4.673 486.65 46.25 572 153.514 890 167.5c165.939 7.298 351.605-12.015 557-57.938" transform="translate(2 2)" stroke="url(#a)" stroke-width="4" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg viewBox="0 0 1438 173" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient x1="11.808%" y1="49.497%" x2="93.884%" y2="50.535%" id="a"><stop stop-color="#E04733" offset="0%"/><stop stop-color="#FF6B1C" offset="20.711%"/><stop stop-color="#FFE600" offset="39.441%"/><stop stop-color="#14B045" offset="63.808%"/><stop stop-color="#0034AC" offset="82.839%"/><stop stop-color="#67318E" offset="100%"/></linearGradient></defs><path d="M0 34.641C90.25 3.065 169.917-6.925 239 4.673 486.65 46.25 572 153.514 890 167.5c165.939 7.298 351.605-12.015 557-57.938" transform="translate(2 2)" stroke="url(#a)" stroke-width="4" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
 
         <div id="szn-skyline" class="szn-skyline">
