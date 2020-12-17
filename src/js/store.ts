@@ -1,4 +1,7 @@
 import { createStore } from 'redux';
+import { lazyFirebase } from './lazyFirebase';
+
+const lazyApp = lazyFirebase();
 
 type AppState = {
   salaryCap: number,
@@ -50,12 +53,25 @@ function removeSelection(state: AppState, action: any) {
 
 function reducer(state = initialState, action: any) {
   switch (action.type) {
-    case 'TOGGLE_SELECTION':
+    case 'TOGGLE_SELECTION': {
       const { id } = action.value;
       const isSelected = state.selections.find(s => s.id === id);
       return isSelected ?  
         removeSelection(state, action) : 
         addSelection(state, action);
+    }
+    case 'GENERATE': {
+      lazyApp.logEvent('szn_generate', {
+        salaryCap: state.salaryCap,
+        spent: state.spent,
+        capLeft: state.capLeft,
+        maxSelections: state.maxSelections,
+      });
+      state.selections.forEach(selection => {
+        lazyApp.logEvent('szn_selection', selection);
+      });
+      return state;
+    }
     default:
       return state;
   }

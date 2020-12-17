@@ -10,7 +10,7 @@ import {
 } from "./components";
 import { categories } from "./categories";
 
-export const Home = ({ styles, script }: { styles: string, script: string }) => {
+export const Home = () => {
   return (
     <html lang="en">
       <head>
@@ -19,7 +19,9 @@ export const Home = ({ styles, script }: { styles: string, script: string }) => 
         <title>Perfect SZN</title>
         <link rel="preload" href="/assets/Arvo.txt" as="fetch" />
         <link rel="preload" href="/assets/Karla.txt" as="fetch" />
-        <EmbeddedStyles styles={styles} />
+        <EmbeddedStyles />
+        <link rel="stylesheet" href="/main.css" />
+        <script type="module" src="/js/index.js"></script>
       </head>
 
       <body class="font-body">
@@ -30,7 +32,7 @@ export const Home = ({ styles, script }: { styles: string, script: string }) => 
         <section class="szn-sticky-bar">
           <ValueBar />
 
-          <button id="szn-submit-button" class="szn-submit-button uppercase font-display tracking-wider hidden">
+          <button id="szn-submit-button" class="szn-submit-button hidden">
             Submit
           </button>
           <button id="szn-submit-button--hidden" class="hidden">You should not see this hack</button>
@@ -61,7 +63,6 @@ export const Home = ({ styles, script }: { styles: string, script: string }) => 
         <Footer />
 
         <canvas class="hidden"></canvas>
-        <EmbeddedScript script={script} />
       </body>
     </html>
   );

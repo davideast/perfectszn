@@ -38,6 +38,7 @@
   "dependencies": {
     "@types/cpx": "^1.5.1",
     "@types/shelljs": "^0.8.8",
+    "firebase": "^8.2.0",
     "redux": "^4.0.5"
   }
 }
