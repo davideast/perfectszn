@@ -8,6 +8,12 @@ const submitButton: HTMLButtonElement | null = document.querySelector('#szn-subm
 const submitHiddenButton = document.querySelector('#szn-submit-button--hidden')! as HTMLButtonElement;
 const downloadLink = document.querySelector('#szn-skyline__holder__button')! as HTMLAnchorElement;
 const canvas = document.querySelector('canvas')! as HTMLCanvasElement;
+const consentBanner = document.querySelector('.szn-consent-banner')! as HTMLDivElement;
+const consentButton = document.querySelector('.szn-consent-banner__button')! as HTMLButtonElement;
+
+consentButton.addEventListener('click', clickEvent => {
+  consentBanner.remove();
+});
 
 function renderState() {
   const state = store.getState();
@@ -25,7 +31,6 @@ function renderState() {
 }
 
 subscribeToState();
-
 
 // Because of the WebKit bug detailed below, we have a hidden button
 // that create two clicks for the actual submit button

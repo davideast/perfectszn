@@ -6,7 +6,7 @@ import {
   ValueBar,
   SznGrid,
   EmbeddedStyles,
-  EmbeddedScript
+  ConsentBanner
 } from "./components";
 import { categories } from "./categories";
 
@@ -25,6 +25,9 @@ export const Home = () => {
       </head>
 
       <body class="font-body">
+
+        <ConsentBanner />
+
         <Header />
 
         <InstructionsPanel />
