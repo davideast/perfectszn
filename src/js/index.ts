@@ -12,7 +12,7 @@ const consentBanner = document.querySelector('.szn-consent-banner')! as HTMLDivE
 const consentButton = document.querySelector('.szn-consent-banner__button')! as HTMLButtonElement;
 
 consentButton.addEventListener('click', clickEvent => {
-  consentBanner.remove();
+  store.dispatch({ type: 'DISMISS', value: true });
 });
 
 function renderState() {
@@ -27,6 +27,11 @@ function renderState() {
   } else {
     submitButton!.classList.add('hidden');
     submitButton!.classList.remove('block');
+  }
+  if(!state.banner) {
+    consentBanner.classList.add('hidden');
+  } else {
+    consentBanner.classList.remove('hidden');
   }
 }
 
@@ -69,6 +74,7 @@ submitHiddenButton.addEventListener('click', clickEvent => {
 });
 
 submitButton!.addEventListener('click', () => {
+  store.dispatch({ type: 'GENERATE' });
   // Sadly, we have to initiate two seperate image creation
   // operations in WebKit. The first won't wait for the requests to finish
   // for the webfonts and the second click will cause it to work.

@@ -1,6 +1,7 @@
 import { createStore } from 'redux';
 import { lazyFirebase } from './lazyFirebase';
-
+const isTrue = (value: string | null) => value == 'true';
+const BANNER_KEY = 'SZN_BANNER_DISPLAY';
 const lazyApp = lazyFirebase();
 
 type AppState = {
@@ -9,7 +10,10 @@ type AppState = {
   capLeft: number,
   selections: any[],
   maxSelections: number,
+  banner: boolean,
 };
+
+const bannerValue = isTrue(localStorage.getItem(BANNER_KEY));
 
 const initialState: AppState = {
   salaryCap: 15,
@@ -17,6 +21,7 @@ const initialState: AppState = {
   selections: [],
   capLeft: 15,
   maxSelections: 5,
+  banner: bannerValue != undefined ? bannerValue : true,
 };
 
 function addSelection(state: AppState, action: any) {
@@ -71,6 +76,15 @@ function reducer(state = initialState, action: any) {
         lazyApp.logEvent('szn_selection', selection);
       });
       return state;
+    }
+    case 'DISMISS': {
+      const isDismissed: boolean = action.value;
+      const isDisplayed = !isDismissed;
+      localStorage.setItem(BANNER_KEY, isDisplayed.toString());
+      return {
+        ...state,
+        banner: isDisplayed,
+      };
     }
     default:
       return state;
