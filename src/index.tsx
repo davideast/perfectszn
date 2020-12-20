@@ -1,7 +1,8 @@
-import { FunctionalComponent, h, JSX } from 'preact';
+import { FunctionalComponent, h } from 'preact';
 import render from 'preact-render-to-string';
 import { Home } from './Home';
-import { writeFileSync, readFileSync } from 'fs';
+import { PrivacyPolicy } from './PrivacyPolicy';
+import { writeFileSync } from 'fs';
 import { join } from 'path';
 import { rm, exec } from 'shelljs';
 import { copySync } from 'cpx';
@@ -42,7 +43,6 @@ copySync('src/assets/**/*.*', publicPath('assets'));
 writeFileSync(publicPath('assets/Arvo.txt'), ARVO_BASE64);
 writeFileSync(publicPath('assets/Karla.txt'), KARLA_BASE64);
 
-const styles = readFileSync(publicPath('main.css'), 'utf-8');
-
 // Write html documents
 componentToString(() => <Home />, 'index.html');
+componentToString(() => <PrivacyPolicy />, 'privacy.html');

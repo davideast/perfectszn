@@ -4,7 +4,7 @@ export const Footer: FunctionalComponent = () => {
   return (
     <footer class="szn-footer">
       <h4 class="szn-footer__heading">
-        Not official
+        <a href="/privacy" class="underline font-display uppercase tracking-wide">Privacy policy</a>
       </h4>
       <h4 class="szn-footer__subtitle">
         Made for fun by 
