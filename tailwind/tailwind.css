@@ -26,7 +26,7 @@ body {
 .szn-consent-banner {
   z-index: 999999999999; 
   opacity: .8;
-  @apply fixed left-0 top-0 w-full bg-white text-black;
+  @apply fixed left-0 bottom-0 w-full bg-white text-black;
 }
 
 .szn-consent-banner:hover {

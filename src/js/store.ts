@@ -1,8 +1,28 @@
 import { createStore } from 'redux';
 import { lazyFirebase } from './lazyFirebase';
-const isTrue = (value: string | null) => value == 'true';
-const BANNER_KEY = 'SZN_BANNER_DISPLAY';
+
+function bannerConsentStore() {
+  const BANNER_KEY = 'SZN_BANNER_DISPLAY';
+  const isTrue = (value: any) => value == 'true';
+  
+  return {
+    // If there is no value in local storage then it's either a first time user
+    // or someone who cleared everything. Either way we have to show the banner
+    // Since localStorage only can store strings, we fake a 'true' value to 
+    // keep everything as if it comes from localStorage.
+    get() {
+      const localBannerValue = localStorage.getItem(BANNER_KEY);
+      const isBannerDisplayed = localBannerValue == null ? 'true' : localBannerValue;
+      return isTrue(isBannerDisplayed);
+    },
+    set(value: boolean) {
+      localStorage.setItem(BANNER_KEY, value.toString());
+    }
+  };
+}
+
 const lazyApp = lazyFirebase();
+const bannerConsent = bannerConsentStore();
 
 type AppState = {
   salaryCap: number,
@@ -13,15 +33,13 @@ type AppState = {
   banner: boolean,
 };
 
-const bannerValue = isTrue(localStorage.getItem(BANNER_KEY));
-
 const initialState: AppState = {
   salaryCap: 15,
   spent: 0,
   selections: [],
   capLeft: 15,
   maxSelections: 5,
-  banner: bannerValue != undefined ? bannerValue : true,
+  banner: bannerConsent.get(),
 };
 
 function addSelection(state: AppState, action: any) {
@@ -80,7 +98,7 @@ function reducer(state = initialState, action: any) {
     case 'DISMISS': {
       const isDismissed: boolean = action.value;
       const isDisplayed = !isDismissed;
-      localStorage.setItem(BANNER_KEY, isDisplayed.toString());
+      bannerConsent.set(isDisplayed);
       return {
         ...state,
         banner: isDisplayed,
