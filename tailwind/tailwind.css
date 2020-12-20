@@ -23,9 +23,16 @@ body {
   margin: 0 12rem !important;
 }
 
-.szn-scroll {
-  @apply overflow-x-scroll overflow-y-hidden;
+.szn-consent-banner {
+  z-index: 999999999999; 
+  opacity: .8;
+  @apply fixed left-0 bottom-0 w-full bg-white text-black;
 }
+
+.szn-consent-banner:hover {
+  opacity: 1;
+}
+
 
 .szn-header {
   margin-top: 12rem !important;

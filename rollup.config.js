@@ -7,7 +7,7 @@ export default {
   input: 'src/js/index.ts',
   output: {
     dir: 'public/js',
-    format: 'iife'
+    format: 'esm'
   },
   plugins: [
     nodeResolve(),
