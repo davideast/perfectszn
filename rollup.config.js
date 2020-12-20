@@ -4,7 +4,10 @@ import { terser } from "rollup-plugin-terser";
 import replace from '@rollup/plugin-replace';
 
 export default {
-  input: 'src/js/index.ts',
+  input: [
+    'src/js/index.ts',
+    'src/js/privacy.ts',
+  ],
   output: {
     dir: 'public/js',
     format: 'esm'
