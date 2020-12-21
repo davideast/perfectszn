@@ -4,7 +4,7 @@ import { localBoolStore } from './localStore';
 
 const enabledStore = localBoolStore('SZN_GA_ENABLED');
 const bannerStore = localBoolStore('SZN_BANNER_DISPLAY');
-const lazyApp = lazyFirebase({ ga: enabledStore.get() });
+const lazyApp = lazyFirebase({ load: enabledStore.get() });
 
 type AppState = {
   salaryCap: number,

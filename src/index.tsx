@@ -1,8 +1,9 @@
 import { FunctionalComponent, h } from 'preact';
 import render from 'preact-render-to-string';
 import { Home } from './Home';
+import { Preload } from './components';
 import { PrivacyPolicy } from './PrivacyPolicy';
-import { writeFileSync } from 'fs';
+import { writeFileSync, readdirSync } from 'fs';
 import { join } from 'path';
 import { rm, exec } from 'shelljs';
 import { copySync } from 'cpx';
@@ -45,6 +46,19 @@ copySync('src/fonts/**/*.*', publicPath('assets'));
 writeFileSync(publicPath('assets/Arvo.txt'), ARVO_BASE64);
 writeFileSync(publicPath('assets/Karla.txt'), KARLA_BASE64);
 
+// Get preloads
+const jsPreloads = readdirSync(publicPath('js'))
+  .filter(file => file !== 'index.js')
+  .filter(file => file !== 'privacy.js')
+  .map(file => ({ path: `/js/${file}`, type: 'script' }));
+
+console.log('Generating preloads for: ')
+jsPreloads.forEach(({ path, type }) => {
+  console.log(`    <link rel="preload" href="${path}" as=${type} crossorigin />`);
+});
+
+const preloads = Preload(jsPreloads);
+
 // Write html documents
-componentToString(() => <Home />, 'index.html');
-componentToString(() => <PrivacyPolicy />, 'privacy.html');
+componentToString(() => <Home preloads={preloads} />, 'index.html');
+componentToString(() => <PrivacyPolicy preloads={preloads} />, 'privacy.html');

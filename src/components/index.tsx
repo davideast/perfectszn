@@ -9,3 +9,4 @@ export * from './interfaces';
 export * from './EmbeddedStyles';
 export * from './EmbeddedScript';
 export * from './ConsentBanner';
+export * from './Preload';

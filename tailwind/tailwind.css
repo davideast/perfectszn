@@ -11,11 +11,13 @@
 }
 
 @font-face { 
+  font-display: swap;
   font-family: 'Arvo'; 
   src: url(/assets/Arvo.woff2); 
 } 
 
 @font-face { 
+  font-display: swap;
   font-family: 'Karla'; 
   src: url(/assets/Karla.woff2); 
 }
@@ -197,11 +199,11 @@ body {
 }
 
 .szn-footer__heading {
-  @apply text-left;
+  @apply text-left text-sm lg:text-base xl:text-base;
 }
 
 .szn-footer__subtitle {
-  @apply text-right;
+  @apply text-right text-sm lg:text-base xl:text-base;
 }
 
 @media(max-width: 1080px) {
