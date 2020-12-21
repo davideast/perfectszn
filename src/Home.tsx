@@ -26,6 +26,8 @@ export const Home = ({ preloads }: { preloads: JSX.Element }) => {
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/180x180.png" />
         <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/152x152.png" />
         <link rel="apple-touch-icon" sizes="167x167" href="/assets/icons/167x167.png" />
+        <link rel="preload" href="/assets/Arvo.woff2" as="font" type="font/woff2" crossOrigin="" />
+        <link rel="preload" href="/assets/Karla.woff2" as="font" type="font/woff2" crossOrigin="" />
         {preloads}
         <link rel="stylesheet" href="/main.css" />
         <script type="module" src="/js/index.js"></script>
