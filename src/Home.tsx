@@ -5,8 +5,7 @@ import {
   InstructionsPanel,
   ValueBar,
   SznGrid,
-  EmbeddedStyles,
-  ConsentBanner
+  ConsentBanner,
 } from "./components";
 import { categories } from "./categories";
 
@@ -17,8 +16,6 @@ export const Home = () => {
         <meta name="description" content="Perfect SZN" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Perfect SZN</title>
-        <link rel="preload" href="/assets/Arvo.txt" as="fetch" />
-        <link rel="preload" href="/assets/Karla.txt" as="fetch" />
         <link rel="stylesheet" href="/main.css" />
         <script type="module" src="/js/index.js"></script>
       </head>

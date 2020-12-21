@@ -3,7 +3,7 @@ import { lazyFirebase } from './lazyFirebase';
 
 let enabledStore = localBoolStore('SZN_GA_ENABLED');
 let bannerStore = localBoolStore('SZN_BANNER_DISPLAY');
-let firebaseApp = lazyFirebase({ ga: enabledStore.get() });
+let firebaseApp = lazyFirebase({ load: enabledStore.get() });
 let isEnabled = enabledStore.get();
 let optButton = document.querySelector('#opt-out-button')! as HTMLButtonElement;
 

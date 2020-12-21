@@ -7,8 +7,8 @@ export const Footer: FunctionalComponent = () => {
         <a href="/privacy" class="underline font-display uppercase tracking-wide">Privacy policy</a>
       </h4>
       <h4 class="szn-footer__subtitle">
-        Made for fun by 
-        <a class="underline" href="https://twitter.com/_davideast" rel="noopener" target="blank">@_davideast</a>
+        Made by 
+        <a class="underline" href="https://twitter.com/_davideast" rel="noopener" target="blank"> @_davideast</a>
       </h4>
     </footer>
   );

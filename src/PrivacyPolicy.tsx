@@ -1,5 +1,5 @@
 import { h, FunctionalComponent } from 'preact';
-import { EmbeddedStyles } from './components';
+
 export const PrivacyPolicy: FunctionalComponent = () => {
   const TwitterLink = () => <a class="underline" href="https://twitter.com/_davideast" rel="noopener" target="blank">@_davideast</a>;
   return (
