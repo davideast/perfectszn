@@ -19,7 +19,6 @@ export const Home = () => {
         <title>Perfect SZN</title>
         <link rel="preload" href="/assets/Arvo.txt" as="fetch" />
         <link rel="preload" href="/assets/Karla.txt" as="fetch" />
-        <EmbeddedStyles />
         <link rel="stylesheet" href="/main.css" />
         <script type="module" src="/js/index.js"></script>
       </head>

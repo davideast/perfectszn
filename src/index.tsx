@@ -39,6 +39,8 @@ exec(`NODE_ENV='${process.env.NODE_ENV}' node_modules/.bin/rollup -c rollup.conf
 
 // Copy static assets
 copySync('src/assets/**/*.*', publicPath('assets'));
+copySync('src/fonts/**/*.*', publicPath('assets'));
+
 // Copy font values thare are embedded when SVGs are generated
 writeFileSync(publicPath('assets/Arvo.txt'), ARVO_BASE64);
 writeFileSync(publicPath('assets/Karla.txt'), KARLA_BASE64);

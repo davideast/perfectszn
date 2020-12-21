@@ -10,6 +10,16 @@
   --color-defocus: hsl(0 0% 80% / 1);
 }
 
+@font-face { 
+  font-family: 'Arvo'; 
+  src: url(/assets/Arvo.woff2); 
+} 
+
+@font-face { 
+  font-family: 'Karla'; 
+  src: url(/assets/Karla.woff2); 
+}
+
 body {
   background-image: var(--gradient-dark);
   @apply text-white;
@@ -193,7 +203,6 @@ body {
 .szn-footer__subtitle {
   @apply text-right;
 }
-
 
 @media(max-width: 1080px) {
   .szn-sticky-bar, .szn-header, .szn-footer, .szn-grid, .szn-instructions, .szn-skyline {

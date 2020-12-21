@@ -19,6 +19,7 @@ if (isEnabled) {
     firebaseApp.disableAnalytics();
     // Set the local store to know GA is disabled
     enabledStore.set(false);
+    // If GA is disabled the user should not see the banner
     bannerStore.set(false);
     disableButton();
   });

@@ -8,7 +8,6 @@ export const PrivacyPolicy: FunctionalComponent = () => {
         <meta name="description" content="Perfect SZN" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Perfect SZN - Privacy Policy</title>
-        <EmbeddedStyles />
         <link rel="stylesheet" href="/main.css" />
         <script type="module" src="/js/privacy.js"></script>
       </head>
