@@ -18,13 +18,16 @@ export const Home = ({ preloads }: { preloads: JSX.Element }) => {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <link rel="icon" type="image/png" href="/assets/icons/16x16.png" sizes="16x16" />
-        <link rel="icon" type="image/png" href="/assets/icons/32x32.png" sizes="32x32" />
-        <link rel="icon" type="image/png" href="/assets/icons/96x96.png" sizes="96x96" />
-        <link rel="apple-touch-icon" sizes="180x180" href="180x180.png" />
-        <link rel="apple-touch-icon" sizes="152x152" href="152x152.png" />
-        <link rel="apple-touch-icon" sizes="167x167" href="167x167.png" />
-        <link rel="icon" type="image/png" sizes="196x196" href="/196x196.png"></link>
+        <link rel="icon" type="image/png" sizes="16x16" href="/assets/icons/16x16.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/32x32.png" />
+        <link rel="icon" type="image/png" sizes="96x96" href="/assets/icons/96x96.png" />
+        <link rel="icon" type="image/png" sizes="196x196" href="/assets/icons/196x196.png" />
+        <link rel="apple-touch-icon" href="180x180.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/180x180.png" />
+        <link rel="apple-touch-icon" sizes="152x152" href="/assets/icons/152x152.png" />
+        <link rel="apple-touch-icon" sizes="167x167" href="/assets/icons/167x167.png" />
+        <link rel="preload" href="/assets/Arvo.woff2" as="font" type="font/woff2" crossOrigin="" />
+        <link rel="preload" href="/assets/Karla.woff2" as="font" type="font/woff2" crossOrigin="" />
         {preloads}
         <link rel="stylesheet" href="/main.css" />
         <script type="module" src="/js/index.js"></script>
