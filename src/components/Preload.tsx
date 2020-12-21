@@ -6,7 +6,7 @@ interface PreloadProp {
 };
 
 export const Preload = (files: PreloadProp[]) => {
-  const linkRels = files.map(({ path, type}) => <link rel="preload" href={path} as={type} />)
+  const linkRels = files.map(({ path, type}) => <link rel="preload" href={path} as={type} crossOrigin="" />)
   return (
     <Fragment>
       {linkRels}

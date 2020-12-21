@@ -54,7 +54,7 @@ const jsPreloads = readdirSync(publicPath('js'))
 
 console.log('Generating preloads for: ')
 jsPreloads.forEach(({ path, type }) => {
-  console.log(`    <link rel="preload" href="${path}" as=${type} />`);
+  console.log(`    <link rel="preload" href="${path}" as=${type} crossorigin />`);
 });
 
 const preloads = Preload(jsPreloads);
