@@ -1,4 +1,4 @@
-import { h } from "preact";
+import { h, JSX, Fragment } from "preact";
 import {
   Header,
   Footer,
@@ -9,13 +9,14 @@ import {
 } from "./components";
 import { categories } from "./categories";
 
-export const Home = () => {
+export const Home = ({ preloads }: { preloads: JSX.Element }) => {
   return (
     <html lang="en">
       <head>
         <meta name="description" content="Perfect SZN" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Perfect SZN</title>
+        {preloads}
         <link rel="stylesheet" href="/main.css" />
         <script type="module" src="/js/index.js"></script>
       </head>

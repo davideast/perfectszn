@@ -1,6 +1,6 @@
-import { h, FunctionalComponent } from 'preact';
+import { h, JSX } from 'preact';
 
-export const PrivacyPolicy: FunctionalComponent = () => {
+export const PrivacyPolicy = ({ preloads }: { preloads: JSX.Element }) => {
   const TwitterLink = () => <a class="underline" href="https://twitter.com/_davideast" rel="noopener" target="blank">@_davideast</a>;
   return (
     <html lang="en">
@@ -8,6 +8,7 @@ export const PrivacyPolicy: FunctionalComponent = () => {
         <meta name="description" content="Perfect SZN" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Perfect SZN - Privacy Policy</title>
+        {preloads}
         <link rel="stylesheet" href="/main.css" />
         <script type="module" src="/js/privacy.js"></script>
       </head>
