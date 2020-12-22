@@ -6,35 +6,6 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ],
-    "headers": [
-      {
-        "source": "/js/index-cb9590280a1b160074881a225b407bb0.js",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=31536000, s-maxage=max-age=31536000"
-          }
-        ]
-      },
-      {
-        "source": "/assets/Karla-5c75e9e473f5dd07cdd3279a445a7fb4.txt",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=31536000, s-maxage=max-age=31536000"
-          }
-        ]
-      },
-      {
-        "source": "/assets/Arvo-c108e0d2fc44b166a50c7640064b1c01.txt",
-        "headers": [
-          {
-            "key": "Cache-Control",
-            "value": "public, max-age=31536000, s-maxage=max-age=31536000"
-          }
-        ]
-      }
     ]
   }
 }
