@@ -9,7 +9,7 @@ import {
 } from "./components";
 import { categories } from "./categories";
 
-export const Home = ({ preloads }: { preloads: JSX.Element }) => {
+export const Home = ({ preloads, indexScript }: { preloads: JSX.Element, indexScript: string }) => {
   return (
     <html lang="en">
       <head>
@@ -30,7 +30,8 @@ export const Home = ({ preloads }: { preloads: JSX.Element }) => {
         <link rel="preload" href="/assets/Karla.woff2" as="font" type="font/woff2" crossOrigin="" />
         {preloads}
         <link rel="stylesheet" href="/main.css" />
-        <script type="module" src="/js/index.js"></script>
+        <script type="module" src="/js/cache.js"></script>
+        <script type="module" src={indexScript}></script>
       </head>
 
       <body class="font-body">
