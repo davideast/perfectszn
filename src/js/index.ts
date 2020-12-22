@@ -193,7 +193,7 @@ function createPostCardSVG(state: any, fonts: string[]) {
 function createPostCardText(state: any, fonts: string[]) {
   // 10 is super important. After 10 for the first line it starts to
   // overflow past the topic card.
-  const MAX_FIRST_LINE_LENGTH = 10;
+  const MAX_FIRST_LINE_LENGTH = 11;
   const MAX_TOTAL_CHARS = 24;
   const { selections } = state;
 
