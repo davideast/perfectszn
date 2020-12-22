@@ -55,8 +55,8 @@ export const categories: SznCategory[] = [
     value: 1,
     topics: [
       { id: "jokic-posterizes", text: "Jokic poster dunk" },
-      { id: "murray-50", text: "Murray 50pt game" },
-      { id: "mpj-50", text: "MPJ 50pt game" },
+      { id: "murray-50", text: "Murray 50pts in a game" },
+      { id: "mpj-50", text: "MPJ 50pts in a game" },
       { id: "bol-10", text: "Bol Bol 10 block game" },
       { id: "rj-posterizes", text: "RJ poster dunk" },
     ]
