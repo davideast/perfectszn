@@ -15,14 +15,18 @@ type AppState = {
   banner: boolean,
 };
 
-const initialState: AppState = {
-  salaryCap: 15,
-  spent: 0,
-  selections: [],
-  capLeft: 15,
-  maxSelections: 5,
-  banner: bannerStore.get(),
-};
+function createInitialState(): AppState {
+  return {
+    salaryCap: 15,
+    spent: 0,
+    selections: [],
+    capLeft: 15,
+    maxSelections: 5,
+    banner: bannerStore.get(),
+  };
+}
+
+const initialState = createInitialState();
 
 function addSelection(state: AppState, action: any) {
   const { cost, text, id } = action.value;
@@ -64,6 +68,9 @@ function reducer(state = initialState, action: any) {
       return isSelected ?  
         removeSelection(state, action) : 
         addSelection(state, action);
+    }
+    case 'RESET': {
+      return createInitialState();
     }
     case 'GENERATE': {
       lazyApp.logEvent('szn_generate', {

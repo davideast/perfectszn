@@ -2,9 +2,10 @@ import { store } from './store';
 
 const sznTopics = document.querySelectorAll('.szn-topic') as NodeListOf<HTMLButtonElement>;
 const valueBar = document.querySelector('#szn-value-bar');
-const valueBarCost: HTMLSpanElement | null = document.querySelector('#szn-value-bar__cost__value');
-const valueBarSelected: HTMLSpanElement | null = document.querySelector('#szn-value-bar__selected');
-const submitButton: HTMLButtonElement | null = document.querySelector('#szn-submit-button');
+const valueBarCost = document.querySelector('#szn-value-bar__cost__value') as HTMLSpanElement;
+const valueBarSelected = document.querySelector('#szn-value-bar__selected')! as HTMLSpanElement;
+const resetButton = document.querySelector('#szn-reset-button')! as HTMLButtonElement;
+const submitButton = document.querySelector('#szn-submit-button')! as HTMLButtonElement;
 const submitHiddenButton = document.querySelector('#szn-submit-button--hidden')! as HTMLButtonElement;
 const downloadLink = document.querySelector('#szn-skyline__holder__button')! as HTMLAnchorElement;
 const canvas = document.querySelector('canvas')! as HTMLCanvasElement;
@@ -17,17 +18,25 @@ consentButton.addEventListener('click', clickEvent => {
 
 function renderState() {
   const state = store.getState();
-  const isMaxSelection = state.selections.length === 5;
+  const isBelowMaxSelections = state.selections.length < state.maxSelections;
+  const hasSelections = state.selections.length > 0;
+
+  sznTopics.forEach(topic => {
+    const isSelected = state.selections.find(s => s.id == topic.id);
+    isSelected ? 
+      topic.classList.add('szn-topic--active') : 
+      topic.classList.remove('szn-topic--active');
+  });
+
   valueBarCost!.textContent = `$${state.capLeft}`;
   valueBarSelected!.textContent = `${state.selections.length}`;
-  // TODO(davideast): Turn this into a better toggle
-  if(isMaxSelection) {
-    submitButton!.classList.add('block');
-    submitButton!.classList.remove('hidden');
-  } else {
-    submitButton!.classList.add('hidden');
-    submitButton!.classList.remove('block');
-  }
+
+  // If there are any selections the user can reset to an initial state
+  resetButton.disabled = !hasSelections;
+  // Disable the submit button if the user has reached the max selection
+  // count or if they don't have any selections.
+  submitButton.disabled = isBelowMaxSelections;
+
   if(!state.banner) {
     consentBanner.classList.add('hidden');
   } else {
@@ -36,6 +45,10 @@ function renderState() {
 }
 
 subscribeToState();
+
+resetButton.addEventListener('click', clickEvent => {
+  store.dispatch({ type: 'RESET' });
+});
 
 // Because of the WebKit bug detailed below, we have a hidden button
 // that create two clicks for the actual submit button
@@ -99,7 +112,6 @@ sznTopics.forEach(sznTopic => {
     const isSelected = !!selections.find(s => s.id === id);
 
     if(!isOver || isSelected) {
-      sznTopic.classList.toggle('szn-topic--active');
       store.dispatch({
         type: 'TOGGLE_SELECTION',
         value: { id, category, text, cost },

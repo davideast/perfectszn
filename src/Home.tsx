@@ -44,9 +44,14 @@ export const Home = ({ preloads }: { preloads: JSX.Element }) => {
         <section class="szn-sticky-bar">
           <ValueBar />
 
-          <button id="szn-submit-button" class="szn-submit-button hidden">
-            Submit
-          </button>
+          <div class="szn-button-bar grid grid-flow-col gap-x-4">
+            <button disabled={true} id="szn-reset-button" class="szn-outline-button szn-outline-button--filled">
+              Reset
+            </button>
+            <button disabled={true} id="szn-submit-button" class="szn-submit-button">
+              Submit
+            </button>
+          </div>
           <button id="szn-submit-button--hidden" class="hidden">You should not see this hack</button>
 
         </section>

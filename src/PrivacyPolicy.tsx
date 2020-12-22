@@ -82,7 +82,7 @@ export const PrivacyPolicy = ({ preloads }: { preloads: JSX.Element }) => {
                 If you wish to opt-out of Google Analytics tracking you can do so by clicking the button below. When you opt-out Perfect SZN will set an indicator to not run Google Analytics for this browser session. If you clear local storage or use Perfect SZN on another browser or device you will see the banner.
               </p>
               <div class="my-8">
-                <button id="opt-out-button" class="outline-button">Opt-out</button>
+                <button id="opt-out-button" class="szn-outline-button">Opt-out</button>
               </div>
             </section>
 
