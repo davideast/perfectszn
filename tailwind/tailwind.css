@@ -38,6 +38,12 @@ body {
   margin: 0 12rem !important;
 }
 
+.szn-sticky-bar {
+  position: sticky;
+  top: .5rem;
+  z-index: 100;
+}
+
 .szn-consent-banner {
   z-index: 999999999999; 
   opacity: .8;
@@ -164,7 +170,7 @@ body {
 }
 
 .szn-skyline__title {
-  @apply font-display text-2xl tracking-wider mb-4;
+  @apply font-display text-3xl tracking-wider mb-4;
 }
 
 .szn-skyline__wave {
