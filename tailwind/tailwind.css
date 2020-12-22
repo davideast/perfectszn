@@ -3,11 +3,14 @@
 @import "tailwindcss/utilities";
 
 :root {
-  --gradient-blue-purple: linear-gradient(132deg, #0034AC 0%, #67318E 100%);
-  --gradient-red-orange: linear-gradient(132deg, #E04733 0%, #FF6B1C 100%);
-  --gradient-dark: linear-gradient(180deg, #0C0C0C 0%, #292929 100%);
+  --color-black-800: hsl(0 0% 16% / 1);
+  --color-black-900: hsl(0 0% 5% / 1);
   --color-active: hsl(31 96% 86% / 1);
   --color-defocus: hsl(0 0% 80% / 1);
+  --color-inactive-dark: hsl(0 0% 42%);
+  --gradient-blue-purple: linear-gradient(132deg, #0034AC 0%, #67318E 100%);
+  --gradient-red-orange: linear-gradient(132deg, #E04733 0%, #FF6B1C 100%);
+  --gradient-dark: linear-gradient(180deg, var(--color-black-900) 0%, var(--color-black-800) 100%);
 }
 
 @font-face { 
@@ -91,8 +94,11 @@ body {
 
 .szn-submit-button {
   background-image: var(--gradient-red-orange);
-  padding: 1rem 4rem;
-  @apply w-full rounded-sm uppercase font-display tracking-wider;
+  @apply rounded-sm uppercase font-display tracking-wider;
+}
+
+.szn-submit-button--disabled, .szn-submit-button[disabled] {
+  background: var(--color-inactive-dark);
 }
 
 .szn-grid {
@@ -228,7 +234,7 @@ body {
     top: .5rem;
     z-index: 100;
   }
-  .szn-value-bar, .szn-submit-button {
+  .szn-value-bar, #szn-submit-button, #szn-reset-button {
     box-shadow: 2px 2px 8px hsl(0 0% 25% / 1);
   }
   .szn-grid {
@@ -302,11 +308,15 @@ body {
   @apply text-xl;
 }
 
-.outline-button {
-  @apply py-3 px-6 text-orange font-display border border-solid border-orange rounded-sm
+.outline-button, .szn-outline-button {
+  @apply py-3 px-6 text-orange font-display border border-solid border-orange rounded-sm uppercase;
 }
 
-.outline-button--disabled {
-  border-color: hsl(0 0% 42%);
-  color: hsl(0 0% 42%);
+.szn-outline-button--filled {
+  background: var(--color-black-900);
+}
+
+.outline-button--disabled, .szn-outline-button--disabled, .szn-outline-button[disabled] {
+  border-color: var(--color-inactive-dark);
+  color: var(--color-inactive-dark);
 }

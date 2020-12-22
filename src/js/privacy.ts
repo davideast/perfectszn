@@ -9,7 +9,7 @@ let optButton = document.querySelector('#opt-out-button')! as HTMLButtonElement;
 
 function disableButton() {
   optButton.textContent = 'You have opted out';
-  optButton.classList.add('outline-button--disabled');
+  optButton.classList.add('szn-outline-button--disabled');
   optButton.disabled = true;
 }
 
