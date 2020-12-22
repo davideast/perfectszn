@@ -1,5 +1,9 @@
 import { store } from './store';
 
+const arvoPath = '::ARVO_PATH::';
+const karlaPath = '::KARLA_PATH::';
+const cacheVersion = "szn-cache-::VERSION::";
+
 const sznTopics = document.querySelectorAll('.szn-topic') as NodeListOf<HTMLButtonElement>;
 const valueBar = document.querySelector('#szn-value-bar');
 const valueBarCost = document.querySelector('#szn-value-bar__cost__value') as HTMLSpanElement;
@@ -148,11 +152,29 @@ function createSVG(canvas: HTMLCanvasElement, state: any, fonts: string[]) {
   return { svgImage, width, height, context, blobURL };
 }
 
-function getFonts() {
-  return Promise.all([
-    fetch('/assets/Arvo.txt').then(res => res.text()),
-    fetch('/assets/Karla.txt').then(res => res.text()),
-  ]);
+async function getFontsFromCache() {
+  const cacheAvailable = 'caches' in self;
+  if(cacheAvailable) {
+    const cache = await caches.open(cacheVersion);
+    let arvoResponse = await cache.match(arvoPath);
+    let karlaResponse = await cache.match(karlaPath);
+    return { arvoResponse, karlaResponse };
+  } else {
+    return { arvoResponse: null, karlaResponse: null };
+  }
+}
+
+async function getFonts(): Promise<string[]> {
+  let { arvoResponse, karlaResponse } = await getFontsFromCache();
+  if(arvoResponse == null) {
+    arvoResponse = await fetch(arvoPath);
+  }
+  if(karlaResponse == null) {
+    karlaResponse = await fetch(karlaPath);
+  }
+  const arvoText = await arvoResponse.text();
+  const karlaText = await karlaResponse.text();
+  return [arvoText, karlaText];
 }
 
 function createPostCardSVG(state: any, fonts: string[]) {
