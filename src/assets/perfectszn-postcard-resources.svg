@@ -14,13 +14,13 @@
     <g id="perfectszn-postcard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <rect id="bg" stroke="#FFFFFF" stroke-width="3" fill="url(#linearGradient-1)" x="1.5" y="1.5" width="1021" height="509"></rect>
         <g id="Callout" transform="translate(278.000000, 355.000000)">
-            <text id="Create-yours" font-family="Arvo-Bold, Arvo" font-size="18" font-weight="bold" fill="#FFFFFF">
+            <text font-family="Arvo-Bold, Arvo" font-size="18" font-weight="bold" fill="#FFFFFF">
                 <tspan x="33" y="43">CREATE YOURS</tspan>
             </text>
-            <text id="SZN-COVERAGE" font-family="Arvo-Bold, Arvo" font-size="18" font-weight="bold" fill="#FFFFFF">
-                <tspan x="367.660156" y="43">SZN COVERAGE</tspan>
+            <text font-family="Arvo-Bold, Arvo" font-size="18" font-weight="bold" fill="#FFFFFF">
+                <tspan x="367.660156" y="43"> INSPIRED BY</tspan>
             </text>
-            <text id="thednvr.com/category" font-family="Karla-Regular_Bold, Karla" font-size="14" font-weight="bold" letter-spacing="-0.685933889" fill="#FFFFFF" text-decoration="underline">
+            <text font-family="Karla-Regular_Bold, Karla" font-size="14" font-weight="bold" letter-spacing="-0.685933889" fill="#FFFFFF" text-decoration="underline">
                 <tspan x="326.337259" y="75">thednvr.com/category/nuggets</tspan>
             </text>
             <rect stroke="#FFFFFF" stroke-width="3" x="1.5" y="1.5" width="547" height="100" rx="4"></rect>
