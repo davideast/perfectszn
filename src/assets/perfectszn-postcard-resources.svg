@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1024px" height="512px" viewBox="0 0 1024 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>perfectszn-postcard</title>
+    <defs>
+        <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#0C0C0C" offset="0%"></stop>
+            <stop stop-color="#292929" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="11.8076026%" y1="35.9764199%" x2="93.8839146%" y2="64.9249423%" id="linearGradient-2">
+            <stop stop-color="#E04733" offset="0%"></stop>
+            <stop stop-color="#FF6B1C" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="perfectszn-postcard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="bg" stroke="#FFFFFF" stroke-width="3" fill="url(#linearGradient-1)" x="1.5" y="1.5" width="1021" height="509"></rect>
+        <g id="Callout" transform="translate(278.000000, 355.000000)">
+            <text font-family="Arvo-Bold, Arvo" font-size="18" font-weight="bold" fill="#FFFFFF">
+                <tspan x="33" y="43">CREATE YOURS</tspan>
+            </text>
+            <text font-family="Arvo-Bold, Arvo" font-size="18" font-weight="bold" fill="#FFFFFF">
+                <tspan x="367.660156" y="43"> INSPIRED BY</tspan>
+            </text>
+            <text font-family="Karla-Regular_Bold, Karla" font-size="14" font-weight="bold" letter-spacing="-0.685933889" fill="#FFFFFF" text-decoration="underline">
+                <tspan x="326.337259" y="75">thednvr.com/category/nuggets</tspan>
+            </text>
+            <rect stroke="#FFFFFF" stroke-width="3" x="1.5" y="1.5" width="547" height="100" rx="4"></rect>
+            <text id="perfectszn.app" font-family="Karla-Regular_Bold, Karla" font-size="18" font-weight="bold" fill="#FFFFFF" text-decoration="underline">
+                <tspan x="33" y="74">perfectszn.app</tspan>
+            </text>
+            <g id="DNVR_MTN" transform="translate(326.000000, 29.000000)" stroke="#FFFFFF">
+                <rect stroke-width="1.485" x="0.7425" y="0.7425" width="22.275" height="14.5144631"></rect>
+                <circle id="Oval" stroke-width="0.9" fill="#FFFFFF" cx="11.88" cy="4.95" r="1.53"></circle>
+                <polyline id="Path-2" stroke-width="1.188" points="0.850469799 10.6840268 5.7938255 6.48483221 11.8534228 10.9497987 17.4877852 6.48483221 22.4311409 10.6840268 23.1221477 11.2155705"></polyline>
+            </g>
+        </g>
+        <g id="TopicCard" transform="translate(88.000000, 236.000000)">
+            <rect id="Rectangle-Copy-12" fill="url(#linearGradient-2)" x="7" y="0" width="167" height="103" rx="4"></rect>
+            <rect fill="#FFFFFF" x="0" y="0" width="170" height="100" rx="4"></rect>
+            <text id="Jokic-MVP" font-family="Karla-Regular_Bold, Karla" font-size="20" font-weight="bold" line-spacing="32" fill="#000516">
+                <tspan x="14" y="38">Jokic MVP</tspan>
+            </text>
+        </g>
+        <g id="TopicCard" transform="translate(278.000000, 236.000000)">
+            <rect id="Rectangle-Copy-12" fill="url(#linearGradient-2)" x="7" y="0" width="167" height="103" rx="4"></rect>
+            <rect fill="#FFFFFF" x="0" y="0" width="170" height="100" rx="4"></rect>
+            <text id="Murray-makes-ASG" font-family="Karla-Regular_Bold, Karla" font-size="20" font-weight="bold" line-spacing="32" fill="#000516">
+                <tspan x="14" y="36">Murray makes </tspan>
+                <tspan x="14" y="68">ASG</tspan>
+            </text>
+        </g>
+        <g id="TopicCard" transform="translate(468.000000, 236.000000)">
+            <rect id="Rectangle-Copy-12" fill="url(#linearGradient-2)" x="7" y="0" width="167" height="103" rx="4"></rect>
+            <rect fill="#FFFFFF" x="0" y="0" width="170" height="100" rx="4"></rect>
+            <text id="MPJ-40%-from-3" font-family="Karla-Regular_Bold, Karla" font-size="20" font-weight="bold" line-spacing="32" fill="#000516">
+                <tspan x="14" y="37">MPJ 40% from </tspan>
+                <tspan x="14" y="69">3</tspan>
+            </text>
+        </g>
+        <g id="TopicCard" transform="translate(658.000000, 236.000000)">
+            <rect id="Rectangle-Copy-12" fill="url(#linearGradient-2)" x="7" y="0" width="167" height="103" rx="4"></rect>
+            <rect fill="#FFFFFF" x="0" y="0" width="170" height="100" rx="4"></rect>
+            <text id="MPJ-50-point-game" font-family="Karla-Regular_Bold, Karla" font-size="20" font-weight="bold" line-spacing="32" fill="#000516">
+                <tspan x="14" y="38">MPJ 50 point </tspan>
+                <tspan x="14" y="70">game</tspan>
+            </text>
+        </g>
+        <g id="TopicCard" transform="translate(88.000000, 355.000000)">
+            <rect id="Rectangle-Copy-12" fill="url(#linearGradient-2)" x="7" y="0" width="167" height="103" rx="4"></rect>
+            <rect fill="#FFFFFF" x="0" y="0" width="170" height="100" rx="4"></rect>
+            <text id="Murray-60-point-game" font-family="Karla-Regular_Bold, Karla" font-size="20" font-weight="bold" line-spacing="32" fill="#000516">
+                <tspan x="14" y="37">Murray 60 </tspan>
+                <tspan x="14" y="69">point game</tspan>
+            </text>
+        </g>
+        <g id="Header" transform="translate(85.000000, 44.000000)">
+            <g id="Skyline" transform="translate(524.000000, 0.000000)">
+                <rect fill="#E04733" x="0" y="0" width="412" height="4" rx="2"></rect>
+                <rect fill="#E04733" x="0" y="12" width="412" height="4" rx="2"></rect>
+                <rect fill="#FF6B1C" x="100" y="36" width="312" height="4" rx="2"></rect>
+                <rect fill="#FF6B1C" x="100" y="24" width="312" height="4" rx="2"></rect>
+                <rect fill="#FFE600" x="40" y="60" width="372" height="4" rx="2"></rect>
+                <rect fill="#FFE600" x="40" y="48" width="372" height="4" rx="2"></rect>
+                <rect fill="#14B045" x="56" y="84" width="356" height="4" rx="2"></rect>
+                <rect fill="#14B045" x="56" y="72" width="356" height="4" rx="2"></rect>
+                <rect fill="#0034AC" x="113" y="108" width="299" height="4" rx="2"></rect>
+                <rect fill="#0034AC" x="113" y="96" width="299" height="4" rx="2"></rect>
+                <rect fill="#67318E" x="186" y="120" width="226" height="4" rx="2"></rect>
+                <rect fill="#67318E" x="186" y="132" width="226" height="4" rx="2"></rect>
+            </g>
+            <text id="Denver-Nuggets" font-family="Karla-Regular_Bold, Karla" font-size="24" font-weight="bold" fill="#FFFFFF">
+                <tspan x="0" y="130">Denver Nuggets</tspan>
+            </text>
+            <text id="Perfect-SZN" font-family="Arvo-Bold, Arvo" font-size="44" font-weight="bold" fill="#FFFFFF">
+                <tspan x="0" y="89">Perfect SZN</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

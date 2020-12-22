@@ -60,7 +60,7 @@ submitHiddenButton.addEventListener('click', clickEvent => {
         // Remove instead of toggle because the user can
         // generate an image to replace the previous one
         downloadLink.classList.remove('hidden');
-        downloadLink.href= pngURL;
+        downloadLink.href = pngURL;
         downloadLink.download = "perfectszn.jpg";
         parentEl?.appendChild(pngImage);
         pngImage.scrollIntoView();
@@ -82,7 +82,7 @@ submitButton!.addEventListener('click', () => {
   submitHiddenButton.click();
   setTimeout(() => {
     submitHiddenButton.click();
-  }, 250);
+  }, 320);
 });
 
 sznTopics.forEach(sznTopic => {
@@ -242,28 +242,39 @@ function createPostCardText(state: any, fonts: string[]) {
   </defs>
   <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
       <rect fill="url(#linearGradient-1)" x="0" y="-6" width="1024" height="518"></rect>
-      <g transform="translate(278.000000, 357.000000)">
-          <text id="Create-yours" font-family="Arvo, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF">
-              <tspan x="32" y="60">CREATE YOURS</tspan>
+      <g transform="translate(278.000000, 355.000000)">
+          <text font-family="Arvo, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF">
+              <tspan x="33" y="43">CREATE YOURS</tspan>
+          </text>
+          <text font-family="Arvo, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF">
+              <tspan x="326.337259" y="43"> INSPIRED BY</tspan>
+          </text>
+          <text font-family="Karla, sans-serif" font-size="14" font-weight="bold" letter-spacing="-0.685933889" fill="#FFFFFF" text-decoration="underline">
+              <tspan x="326.337259" y="75">thednvr.com/category/nuggets</tspan>
           </text>
           <rect stroke="#FFFFFF" stroke-width="3" x="1.5" y="1.5" width="547" height="100" rx="4"></rect>
-          <text font-family="Karla, sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF" text-decoration="underline">
-              <tspan x="377" y="60">perfectszn.app</tspan>
+          <text font-family="Karla, sans-serif" font-size="18" font-weight="bold" fill="#FFFFFF" text-decoration="underline">
+              <tspan x="33" y="74">perfectszn.app</tspan>
           </text>
+          <g id="DNVR_MTN" transform="translate(484.000000, 29.000000)" stroke="#FFFFFF">
+            <rect stroke-width="1.485" x="0.7425" y="0.7425" width="22.275" height="14.5144631"></rect>
+            <circle stroke-width="0.9" fill="#FFFFFF" cx="11.88" cy="4.95" r="1.53"></circle>
+            <polyline stroke-width="1.188" points="0.850469799 10.6840268 5.7938255 6.48483221 11.8534228 10.9497987 17.4877852 6.48483221 22.4311409 10.6840268 23.1221477 11.2155705"></polyline>
+          </g>
       </g>
       <g transform="translate(88.000000, 238.000000)">
-          <rect id="Rectangle-Copy-12" fill="url(#linearGradient-2)" x="7" y="0" width="167" height="103" rx="4"></rect>
-          <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="170" height="100" rx="4"></rect>
+          <rect fill="url(#linearGradient-2)" x="7" y="0" width="167" height="103" rx="4"></rect>
+          <rect fill="#FFFFFF" x="0" y="0" width="170" height="100" rx="4"></rect>
           ${rows[0]}
       </g>
       <g transform="translate(278.000000, 238.000000)">
-          <rect id="Rectangle-Copy-12" fill="url(#linearGradient-2)" x="7" y="0" width="167" height="103" rx="4"></rect>
-          <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="170" height="100" rx="4"></rect>
+          <rect fill="url(#linearGradient-2)" x="7" y="0" width="167" height="103" rx="4"></rect>
+          <rect fill="#FFFFFF" x="0" y="0" width="170" height="100" rx="4"></rect>
           ${rows[1]}
       </g>
       <g transform="translate(468.000000, 238.000000)">
-          <rect id="Rectangle-Copy-12" fill="url(#linearGradient-2)" x="7" y="0" width="167" height="103" rx="4"></rect>
-          <rect id="Rectangle" fill="#FFFFFF" x="0" y="0" width="170" height="100" rx="4"></rect>
+          <rect fill="url(#linearGradient-2)" x="7" y="0" width="167" height="103" rx="4"></rect>
+          <rect fill="#FFFFFF" x="0" y="0" width="170" height="100" rx="4"></rect>
           ${rows[2]}
       </g>
       <g transform="translate(658.000000, 238.000000)">
